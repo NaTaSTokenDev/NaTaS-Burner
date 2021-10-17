@@ -43,14 +43,14 @@ const Transfers = ({
         onChange={e => setRecipient(e.target.value)}
       />
       <input
-        type="number"
-        placeholder="Amount"
+  //      type="number"
+ //       placeholder="Amount"
         value={amount}
         onChange={e => setAmount(e.target.value)}
       />
       <button
         className="button"
-        disabled={!recipient && !amount}
+//        disabled={!recipient && !amount}
         onClick={sendTransfer}
       >
         {loading ? (
@@ -59,7 +59,7 @@ const Transfers = ({
           </span>
         ) : (
           <span>
-            <i className="far fa-fire"></i>&nbsp; BURN!
+            <i className="far fa fa-fire"></i>&nbsp; BURN!
           </span>
         )}
       </button>
