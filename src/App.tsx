@@ -43,9 +43,9 @@ const App = () => {
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="main-box">
-        <h1>Taquito Boilerplate</h1>
+        <h1>NaTaS Burner</h1>
         <div id="dialog">
-          <header>Try the Taquito Boilerplate App!</header>
+          <header>Burn 10 DeMN Coins for a chance to win the NaTaS Pool</header>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -182,20 +182,20 @@ const App = () => {
         <div id="dialog">
           <header>Welcome to Taquito Boilerplate App!</header>
           <div id="content">
-            <p>Hello!</p>
+            <p>Welcome!</p>
             <p>
-              This is a template Tezos dApp built using Taquito. It's a starting
-              point for you to hack on and build your own dApp for Tezos.
+              Burn 10 of your DeMN coins you will have a 1 in 1000 chance to win the 
+              NaTaS Token Prize Pool.
               <br />
               If you have not done so already, go to the{" "}
               <a
-                href="https://github.com/ecadlabs/taquito-boilerplate"
+                href="https://natastoken.xyz"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Taquito boilerplate Github page
+                for more information
               </a>{" "}
-              and click the <em>"Use this template"</em> button.
+              Happy Burning
             </p>
             <p>Go forth and Tezos!</p>
           </div>
