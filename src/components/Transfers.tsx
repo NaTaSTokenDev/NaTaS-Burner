@@ -42,11 +42,11 @@ const Transfers = ({
         value={recipient}
         onChange={e => setRecipient(e.target.value)}    */} 
       />
- {/*     <input
+      <input
         type="number"
         placeholder="Amount"
         value={amount}
-        onChange={e => setAmount(e.target.value)}   */} 
+        onChange={e => setAmount(e.target.value)}   
       />
       <button
         className="button"
