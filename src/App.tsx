@@ -60,7 +60,8 @@ const App = () => {
                 <span id="public-token-copy__copied">
                   <i className="far fa-thumbs-up"></i>
                 </span>
-              ) : (
+              ) 
+              (
                 <span
                   id="public-token-copy"
                   onClick={() => {
