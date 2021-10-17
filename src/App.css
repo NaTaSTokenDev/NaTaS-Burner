@@ -163,7 +163,7 @@ a:hover {
   padding: 0px 10px 20px 10px;
 }
 
-#transfer-inputs input[type="text"] {
+/*#transfer-inputs input[type="text"] {
   padding: 15px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -173,7 +173,7 @@ a:hover {
   border-right: none;
   margin-top: 0px;
   margin-bottom: 5px;
-}
+}*\
 
 #transfer-inputs input[type="number"] {
   padding: 15px;
