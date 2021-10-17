@@ -176,14 +176,14 @@ const App = () => {
               {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
             </p>
           </div>
-          <DisconnectButton
+          <DisconnectButton>
             wallet={wallet}
             setPublicToken={setPublicToken}
             setUserAddress={setUserAddress}
             setUserBalance={setUserBalance}
             setWallet={setWallet}
             setTezos={setTezos}
-            setBeaconConnection={setBeaconConnection}/>
+            setBeaconConnection={setBeaconConnection}
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
