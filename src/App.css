@@ -33,7 +33,7 @@ h1 {
 header {
   font-size: 2rem;
   padding: 20px;
-  background-color: #35636e;
+  background-color: #990000;
   color: white;
 }
 
@@ -67,7 +67,7 @@ header {
 .button {
   margin-top: 0px;
   margin-bottom: 5px;
-  color: #5e91af;
+  color: #ffffff;
   font-size: 1rem;
   padding: 15px;
   background-color: white;
@@ -79,7 +79,7 @@ header {
 }
 .button:hover {
   color: white;
-  background-color: #35636e;
+  background-color: #990000;
 }
 .button:active {
   margin-top: 5px;
@@ -101,7 +101,7 @@ header {
 #public-token-copy:hover {
   border-radius: 3px;
   color: white;
-  background-color: #35636e;
+  background-color: #990000;
 }
 
 .text-align-center {
@@ -139,7 +139,7 @@ a:hover {
 }
 
 #tabs div.active {
-  background-color: #35636e;
+  background-color: #990000;
   color: white;
 }
 
