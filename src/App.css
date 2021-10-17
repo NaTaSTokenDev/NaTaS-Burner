@@ -176,6 +176,31 @@ a:hover {
   text-align: right;
 }
 
+
+.container {
+  background: black;
+  display: inline-block;
+  border: 5px solid black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  grid-gap: 5px;
+}
+
+.cell {
+   /* center the cell content */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: Arial;
+  font-size: 3rem;
+  font-weight: bold;
+  background: white;
+}
+
 /* Removes arrows in input number */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
