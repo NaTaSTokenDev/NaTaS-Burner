@@ -96,7 +96,7 @@ const App = () => {
         <div id="tabs">
           <div
             id="transfer"
-            className={activeTab === "transfer" ? "active" : ""}
+//            className={activeTab === "transfer" ? "active" : ""}
             onClick={() => setActiveTab("transfer")}
           >
             Burn DeMN's
@@ -134,6 +134,10 @@ const App = () => {
                   <div>6</div>
                   <div>7</div>
                   <div>8</div>
+                  <div>9</div>
+                  <div>10</div>
+                  <div>11</div>
+                  <div>12</div>
                 </div>
                 <UpdateContract
                   contract={contract}
