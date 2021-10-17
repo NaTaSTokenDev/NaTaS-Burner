@@ -174,7 +174,7 @@ const App = () => {
           <h1>NaTaS Burner</h1>
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
-              src="/src/images/natas_demn_sm.png"
+              src="/images/natas_demn_sm.png"
               alt="Buy Natas"
             />
           </a>
@@ -213,7 +213,7 @@ const App = () => {
           />
         </div>
         <div id="footer">
-          <img src="/src/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
+          <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
       </div>
     );
