@@ -43,9 +43,9 @@ const App = () => {
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="main-box">
-        <h1>NaTaS Burner</h1>
+        <h1>NaTaS BURNER</h1>
         <div id="dialog">
-          <header>Burn 10 DeMN Coins for a chance to win the NaTaS Pool</header>
+          <header>Burn 100 DeMN Coins for a chance to win the NaTaS Pool</header>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -92,7 +92,7 @@ const App = () => {
   } else if (userAddress && !isNaN(userBalance)) {
     return (
       <div className="main-box">
-        <h1>NaTaS Burner</h1>
+        <h1>NaTaS BURNER</h1>
         <div id="tabs">
           <div
             id="transfer"
@@ -113,7 +113,7 @@ const App = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h3 className="text-align-center">Burn DeMN Tokens</h3>
+                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
                 <Transfers
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
@@ -171,7 +171,7 @@ const App = () => {
     return (
       <div className="main-box">
         <div className="title">
-          <h1>NaTaS Burner</h1>
+          <h1>NaTaS BURNER</h1>
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
               src="/images/natas_demn_sm.png"
@@ -180,11 +180,11 @@ const App = () => {
           </a>
         </div>
         <div id="dialog">
-          <header>NaTaS Burner</header>
+          <header>NaTaS BURNER</header>
           <div id="content">
             <p>Welcome!</p>
             <p>
-              Burn 10 of your DeMN coins you will have a 1 in 1000 chance to win the 
+              Burn 100 of your DeMN coins you will have a 1 in 100 chance to win the 
               NaTaS Token Prize Pool.
               <br />
               If you have not done so already, go to the{"NaTaS Token Website"}
