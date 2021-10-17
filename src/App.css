@@ -98,6 +98,21 @@ header {
   margin-bottom: 0px;
 }
 
+#transfer-inputs input[type="number"] {
+  padding: 15px;
+  width: 60px;
+  border: solid 4px #990000;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-left: none;
+  outline: none;
+  margin-right: 5px;
+  font-size: 1rem;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
 #public-token {
   word-break: break-word;
 }
