@@ -113,7 +113,7 @@ const App = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h3 className="text-align-center">Make a transfer</h3>
+                <h3 className="text-align-center">Burn Your DeMN Tokens</h3>
                 <Transfers
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
@@ -187,7 +187,7 @@ const App = () => {
               Burn 10 of your DeMN coins you will have a 1 in 1000 chance to win the 
               NaTaS Token Prize Pool.
               <br />
-              If you have not done so already, go to the{" "}
+              If you have not done so already, go to the{"website"}
               <a
                 href="https://natastoken.xyz"
                 target="_blank"
