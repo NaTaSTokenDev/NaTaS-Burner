@@ -112,14 +112,12 @@ const App = () => {
         <div id="dialog">
           <div id="content">
             {activeTab === "transfer" ? (
-              <div id="transfers">
-                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
-                <Transfers
-                  Tezos={Tezos}
-                  setUserBalance={setUserBalance}
-                  userAddress={userAddress}
-                />
-              </div>
+              
+              
+              
+              
+              
+              
             ) : (
               <div id="increment-decrement">
                 <h3 className="text-align-center">
