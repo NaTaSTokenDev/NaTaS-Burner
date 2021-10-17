@@ -109,10 +109,8 @@ const App = () => {
             See Ramaining Numbers
           </div>
         </div>
- {/* 
        <div id="dialog">
           <div id="content">
-          */}
             {activeTab === "transfer" ? (
               <div id="transfers">
                 <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
@@ -176,7 +174,7 @@ const App = () => {
               {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
             </p>
           </div>
-          <DisconnectButton/>
+          <DisconnectButton
             wallet={wallet}
             setPublicToken={setPublicToken}
             setUserAddress={setUserAddress}
@@ -184,6 +182,7 @@ const App = () => {
             setWallet={setWallet}
             setTezos={setTezos}
             setBeaconConnection={setBeaconConnection}
+            />
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
