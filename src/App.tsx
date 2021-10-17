@@ -61,6 +61,7 @@ const App = () => {
                   <i className="far fa-thumbs-up"></i>
                 </span>
               ) 
+               
               (
                 <span
                   id="public-token-copy"
@@ -70,7 +71,7 @@ const App = () => {
                       setCopiedPublicToken(true);
                       setTimeout(() => setCopiedPublicToken(false), 2000);
                     }
-                  }}
+                  }
                 >
                   <i className="far fa-copy"></i>
                 </span>
