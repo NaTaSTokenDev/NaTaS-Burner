@@ -99,14 +99,14 @@ const App = () => {
             className={activeTab === "transfer" ? "active" : ""}
             onClick={() => setActiveTab("transfer")}
           >
-            Make a transfer
+            Burn DeMN's
           </div>
           <div
             id="contract"
             className={activeTab === "contract" ? "active" : ""}
             onClick={() => setActiveTab("contract")}
           >
-            Interact with a contract
+            See Ramaining Numbers
           </div>
         </div>
         <div id="dialog">
