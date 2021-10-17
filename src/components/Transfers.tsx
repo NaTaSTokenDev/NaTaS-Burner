@@ -10,7 +10,7 @@ const Transfers = ({
   setUserBalance: Dispatch<SetStateAction<number>>;
   userAddress: string;
 }): JSX.Element => {
- /* const [recipient, setRecipient] = useState<string>(""); *\
+  const [recipient, setRecipient] = useState<string>("");
   const [amount, setAmount] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
