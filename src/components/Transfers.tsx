@@ -59,7 +59,7 @@ const Transfers = ({
           </span>
         ) : (
           <span>
-            <i className="far fa-paper-plane"></i>&nbsp; Send
+            <i className="far fa-paper-plane"></i>&nbsp; BURN!
           </span>
         )}
       </button>
