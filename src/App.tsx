@@ -113,7 +113,7 @@ const App = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h3 className="text-align-center">Burn Your DeMN Tokens</h3>
+                <h3 className="text-align-center">Make a transfer</h3>
                 <Transfers
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
@@ -124,8 +124,6 @@ const App = () => {
               <div id="increment-decrement">
                 <h3 className="text-align-center">
                   Current counter: <span>{storage}</span>
-                  <div class="container">
-         </div>                    
                 </h3>
                 <UpdateContract
                   contract={contract}
@@ -189,7 +187,7 @@ const App = () => {
               Burn 10 of your DeMN coins you will have a 1 in 1000 chance to win the 
               NaTaS Token Prize Pool.
               <br />
-              If you have not done so already, go to the{"website"}
+              If you have not done so already, go to the{" "}
               <a
                 href="https://natastoken.xyz"
                 target="_blank"
@@ -225,3 +223,15 @@ const App = () => {
 };
 
 export default App;
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
