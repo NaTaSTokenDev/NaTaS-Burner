@@ -67,7 +67,7 @@ header {
 .button {
   margin-top: 0px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #445154;
   font-size: 1rem;
   padding: 15px;
   background-color: white;
@@ -79,7 +79,7 @@ header {
 }
 .button:hover {
   color: white;
-  background-color: #990000;
+  background-color: #8aa2a8;
 }
 .button:active {
   margin-top: 5px;
