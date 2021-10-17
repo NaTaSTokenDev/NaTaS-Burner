@@ -30,6 +30,11 @@ h1 {
   text-align: center;
 }
 
+
+h3 {
+  color: #ffffff;
+}
+
 header {
   font-size: 2rem;
   padding: 20px;
