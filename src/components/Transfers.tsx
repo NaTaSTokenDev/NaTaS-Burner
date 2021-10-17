@@ -36,21 +36,28 @@ const Transfers = ({
 
   return (
     <div id="transfer-inputs">
-      <input
-        type="text"
-        placeholder="Burn 10 DeMN Tokens"
-        value={recipient}
-        onChange={e => setRecipient(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Amount"
-        value={amount}
-        onChange={e => setAmount(e.target.value)}
-      />
+      <span>
+            &nbsp; "Burn 100 DeMN Tokens"
+          </span>
+//      <input
+//        type="text"
+//        placeholder="Burn 100 DeMN Tokens"
+//        value={recipient}
+//        onChange={e => setRecipient(e.target.value)}
+  //    />
+ //     <input
+ //       type="number"
+  //      placeholder="Amount"
+  //      value={amount}
+ //       onChange={e => setAmount(e.target.value)}
+ //     />
       <button
         className="button"
-        disabled={!recipient && !amount}
+        
+        
+ //       disabled={!recipient && !amount}
+        
+        
         onClick={sendTransfer}
       >
         {loading ? (
@@ -59,7 +66,7 @@ const Transfers = ({
           </span>
         ) : (
           <span>
-            <i className="far fa-paper-plane"></i>&nbsp; Send
+            </i>&nbsp; BURN!
           </span>
         )}
       </button>
