@@ -176,7 +176,7 @@ const App = () => {
               {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
             </p>
           </div>
-          <DisconnectButton>
+          <DisconnectButton/>
             wallet={wallet}
             setPublicToken={setPublicToken}
             setUserAddress={setUserAddress}
