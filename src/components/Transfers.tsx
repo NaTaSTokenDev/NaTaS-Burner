@@ -35,7 +35,7 @@ const Transfers = ({
   };
 
   return (
-    <div id="transfer-inputs">
+ //   <div id="transfer-inputs">
       <input
  //      type="text"
  //      placeholder="Recipient"
