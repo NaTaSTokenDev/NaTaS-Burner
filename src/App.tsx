@@ -85,7 +85,7 @@ const App = () => {
           </div>
         </div>
         <div id="footer">
-          <img src="built-with-taquito.png" alt="Built with Taquito" />
+          <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
       </div>
     );
