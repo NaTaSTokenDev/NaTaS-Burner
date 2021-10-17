@@ -92,7 +92,7 @@ const App = () => {
   } else if (userAddress && !isNaN(userBalance)) {
     return (
       <div className="main-box">
-        <h1>Taquito Boilerplate</h1>
+        <h1>NaTaS Burner</h1>
         <div id="tabs">
           <div
             id="transfer"
@@ -163,7 +163,7 @@ const App = () => {
           />
         </div>
         <div id="footer">
-          <img src="built-with-taquito.png" alt="Built with Taquito" />
+          <img src="/src/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
         </div>
       </div>
     );
@@ -171,16 +171,16 @@ const App = () => {
     return (
       <div className="main-box">
         <div className="title">
-          <h1>Taquito Boilerplate</h1>
-          <a href="https://app.netlify.com/start/deploy?repository=https://github.com/ecadlabs/taquito-boilerplate">
+          <h1>NaTaS Burner</h1>
+          <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
-              src="https://www.netlify.com/img/deploy/button.svg"
-              alt="netlify-button"
+              src="/src/images/natas_demn_sm.png"
+              alt="Buy Natas"
             />
           </a>
         </div>
         <div id="dialog">
-          <header>Welcome to Taquito Boilerplate App!</header>
+          <header>NaTaS Burner</header>
           <div id="content">
             <p>Welcome!</p>
             <p>
@@ -197,7 +197,7 @@ const App = () => {
               </a>{" "}
               Happy Burning
             </p>
-            <p>Go forth and Tezos!</p>
+            <p>Beta Test - Not Public</p>
           </div>
           <ConnectButton
             Tezos={Tezos}
@@ -213,7 +213,7 @@ const App = () => {
           />
         </div>
         <div id="footer">
-          <img src="built-with-taquito.png" alt="Built with Taquito" />
+          <img src="/src/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
       </div>
     );
