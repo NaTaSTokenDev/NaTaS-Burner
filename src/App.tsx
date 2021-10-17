@@ -109,8 +109,10 @@ const App = () => {
             See Ramaining Numbers
           </div>
         </div>
-        <div id="dialog">
+ {/* 
+       <div id="dialog">
           <div id="content">
+          */}
             {activeTab === "transfer" ? (
               <div id="transfers">
                 <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
