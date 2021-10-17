@@ -125,22 +125,7 @@ const App = () => {
                 <h3 className="text-align-center">
                   Current counter: <span>{storage}</span>
                   <div class="container">
-         </div>
-                    
-  <div class="grid">
-    <div class="cell" id="1">1</div>
-    <div class="cell" id="2">2</div>
-    <div class="cell" id="3">3</div>
-    <div class="cell" id="4">4</div>
-    <div class="cell" id="5">5</div>
-    <div class="cell" id="6">6</div>
-    <div class="cell" id="7">7</div>
-    <div class="cell" id="8">8</div>
-    <div class="cell" id="9">9</div>
-  </div>
-
-                  
-                  
+         </div>                    
                 </h3>
                 <UpdateContract
                   contract={contract}
