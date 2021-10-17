@@ -60,9 +60,7 @@ const App = () => {
                 <span id="public-token-copy__copied">
                   <i className="far fa-thumbs-up"></i>
                 </span>
-              ) 
-               
-              (
+              ) : (
                 <span
                   id="public-token-copy"
                   onClick={() => {
@@ -71,7 +69,7 @@ const App = () => {
                       setCopiedPublicToken(true);
                       setTimeout(() => setCopiedPublicToken(false), 2000);
                     }
-                  }
+                  }}
                 >
                   <i className="far fa-copy"></i>
                 </span>
@@ -98,7 +96,7 @@ const App = () => {
         <div id="tabs">
           <div
             id="transfer"
-//            className={activeTab === "transfer" ? "active" : ""}
+            className={activeTab === "transfer" ? "active" : ""}
             onClick={() => setActiveTab("transfer")}
           >
             Burn DeMN's
@@ -114,12 +112,14 @@ const App = () => {
         <div id="dialog">
           <div id="content">
             {activeTab === "transfer" ? (
-              
-              
-              
-              
-              
-              
+              <div id="transfers">
+                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
+                <Transfers
+                  Tezos={Tezos}
+                  setUserBalance={setUserBalance}
+                  userAddress={userAddress}
+                />
+              </div>
             ) : (
               <div id="increment-decrement">
                 <h3 className="text-align-center">
@@ -138,6 +138,14 @@ const App = () => {
                   <div>10</div>
                   <div>11</div>
                   <div>12</div>
+                  <div>13</div>
+                  <div>14</div>
+                  <div>15</div>
+                  <div>16</div>
+                  <div>17</div>
+                  <div>18</div>
+                  <div>19</div>
+                  <div>20</div>
                 </div>
                 <UpdateContract
                   contract={contract}
