@@ -183,8 +183,7 @@ const App = () => {
             setUserBalance={setUserBalance}
             setWallet={setWallet}
             setTezos={setTezos}
-            setBeaconConnection={setBeaconConnection}
-          />
+            setBeaconConnection={setBeaconConnection}/>
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
