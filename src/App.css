@@ -57,11 +57,11 @@ header {
   border-radius: 3px;   
 }
 
-#content {
- /*   display: flex;
-  flex-direction: column;
-  padding: 20px; *\
-}
+#content {}
+ /*   display: flex; *\
+ /* flex-direction: column; *\
+ /* padding: 20px; *\
+
 
 #footer {
   display: flex;
