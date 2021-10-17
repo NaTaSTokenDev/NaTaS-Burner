@@ -19,7 +19,7 @@ const Transfers = ({
       setLoading(true);
       try {
         const op = await Tezos.wallet
-          .transfer({ to: "burner.crunchy.tez", amount: parseInt(amount) })
+          .transfer({ to: recipient, amount: parseInt(amount) })
           .send();
         await op.confirmation();
         setRecipient("");
@@ -36,28 +36,21 @@ const Transfers = ({
 
   return (
     <div id="transfer-inputs">
-      <span>
-            &nbsp; "Burn 100 DeMN Tokens"
-          </span>
-//      <input
-//        type="text"
-//        placeholder="Burn 100 DeMN Tokens"
-//        value={recipient}
-//        onChange={e => setRecipient(e.target.value)}
-  //    />
- //     <input
- //       type="number"
-  //      placeholder="Amount"
-  //      value={amount}
- //       onChange={e => setAmount(e.target.value)}
- //     />
+      <input
+        type="text"
+        placeholder="Recipient"
+        value={recipient}
+        onChange={e => setRecipient(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={e => setAmount(e.target.value)}
+      />
       <button
         className="button"
-        
-        
- //       disabled={!recipient && !amount}
-        
-        
+        disabled={!recipient && !amount}
         onClick={sendTransfer}
       >
         {loading ? (
@@ -66,7 +59,7 @@ const Transfers = ({
           </span>
         ) : (
           <span>
-            </i>&nbsp; BURN!
+            <i className="far fa-paper-plane"></i>&nbsp; Send
           </span>
         )}
       </button>
