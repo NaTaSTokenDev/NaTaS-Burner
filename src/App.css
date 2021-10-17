@@ -72,7 +72,7 @@ header {
   padding: 15px;
   background-color: white;
   border-radius: 3px;
-  border: solid 2px #5e91af;
+  border: solid 2px #990000;
   outline: none;
   cursor: pointer;
   transition: 0.2s;
@@ -110,7 +110,7 @@ header {
 
 a {
   text-decoration: none;
-  color: royalblue;
+  color: white;
 }
 a:hover {
   font-style: italic;
@@ -121,7 +121,7 @@ a:hover {
   flex-direction: row;
   justify-content: space-around;
   border: none;
-  color: #5e91af;
+  color: #990000;
   margin: 0px;
   transition: 0.3s;
 }
