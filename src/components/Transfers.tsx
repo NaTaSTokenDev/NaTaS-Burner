@@ -35,6 +35,19 @@ const Transfers = ({
   };
 
   return (
+    <div id="transfer-inputs">
+       <input
+       type="text"
+       placeholder="Recipient"
+        value={recipient}
+        onChange={e => setRecipient(e.target.value)}   
+      />
+      <input
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={e => setAmount(e.target.value)}   
+      />
       <button
         className="button"
         disabled={!recipient && !amount}
