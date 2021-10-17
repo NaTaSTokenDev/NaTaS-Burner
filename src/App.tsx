@@ -125,7 +125,7 @@ const App = () => {
                 <h3 className="text-align-center">
                   Current counter: <span>{storage}</span>
                 </h3>
-                <div class="grid-container">
+                <div classname="grid-container">
                   <div>1</div>
                   <div>2</div>
                   <div>3</div>  
