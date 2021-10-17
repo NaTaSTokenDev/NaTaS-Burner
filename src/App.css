@@ -8,6 +8,8 @@ body,
   font-size: 1rem;
 }
 
+html {background-color: black}
+
 #root {
   display: grid;
 }
