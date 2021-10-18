@@ -119,7 +119,7 @@ const App = () => {
    //               setUserBalance={setUserBalance}
   //                userAddress={userAddress}                
                />
-              </div>
+    //          </div>
             ) : (
               <div id="increment-decrement">
                 <h3 className="text-align-center">
