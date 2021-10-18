@@ -118,7 +118,7 @@ const App = () => {
    //               Tezos={Tezos}
    //               setUserBalance={setUserBalance}
   //                userAddress={userAddress}                
- //               />
+               />
               </div>
             ) : (
               <div id="increment-decrement">
