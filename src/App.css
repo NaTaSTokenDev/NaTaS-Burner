@@ -67,6 +67,7 @@ header {
   display: flex;
   justify-content: flex-end;
   padding-top: 20px;
+  align-items: center;
 }
 
 .buttons {
