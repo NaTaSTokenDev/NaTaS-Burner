@@ -1,6 +1,6 @@
 {
-  "name": "taquito-boilerplate-react",
-  "version": "0.1.0",
+  "name": "natas-burner",
+  "version": "0.1",
   "private": true,
   "dependencies": {
     "@ledgerhq/hw-transport-u2f": "^5.22.0",
