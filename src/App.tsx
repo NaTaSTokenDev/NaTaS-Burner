@@ -180,7 +180,7 @@ const App = () => {
  //             <i className="far fa-file-code"></i>&nbsp;
  //             <a
 //                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
-  ////              target="_blank"
+  //              target="_blank"
 //                rel="noopener noreferrer"
 //              >
 //                {contractAddress}
