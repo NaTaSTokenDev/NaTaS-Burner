@@ -3,7 +3,7 @@ import { TezosToolkit } from "@taquito/taquito";
 
 const Transfers = ({
   Tezos,
-//  setUserBalance,
+  setUserBalance,
   userAddress
 }: {
   Tezos: TezosToolkit;
@@ -25,7 +25,7 @@ const Transfers = ({
         setRecipient("");
         setAmount("");
         const balance = await Tezos.tz.getBalance(userAddress);
-//        setUserBalance(balance.toNumber());
+        setUserBalance(balance.toNumber());
       } catch (error) {
         console.log(error);
       } finally {
@@ -36,21 +36,21 @@ const Transfers = ({
 
   return (
       <div id="transfer-inputs">
-      <input
- //      type="text"
- //      placeholder="Recipient"
-        value={recipient}
+      {/*    <input
+       type="text"
+       placeholder="Recipient"
+       value={recipient}
         onChange={e => setRecipient(e.target.value)}
       />
       <input
- //       type="number"
- //       placeholder="Amount"
- //       value={amount}
-  //      onChange={e => setAmount(e.target.value)}
-      />
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={e => setAmount(e.target.value)}
+      /> */}
       <button
         className="button"
-//        disabled={!recipient && !amount}
+        disabled={!recipient && !amount}
         onClick={sendTransfer}
       >
         {loading ? (
