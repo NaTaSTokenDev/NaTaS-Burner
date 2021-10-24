@@ -45,8 +45,8 @@ const Transfers = ({
       <input
  //       type="number"
  //       placeholder="Amount"
-        value={amount}
-        onChange={e => setAmount(e.target.value)}
+ //       value={amount}
+  //      onChange={e => setAmount(e.target.value)}
       />
       <button
         className="button"
