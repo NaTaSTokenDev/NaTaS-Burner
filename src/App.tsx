@@ -45,7 +45,7 @@ const App = () => {
       <div className="main-box">
         <h1>NaTaS BURNER</h1>
         <div id="dialog">
-          <header>Burn 100 DeMN Coins for a chance to win the NaTaS Pool</header>
+          <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -121,7 +121,7 @@ const App = () => {
                />
               </div>
             ) : (
-              <div id="increment-decrement">
+              {*/  <div id="increment-decrement">  */}
                 <h3 className="text-align-center">
                 Red Squares have been Elminated
                 </h3>
