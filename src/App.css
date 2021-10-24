@@ -102,7 +102,6 @@ header {
 #transfer-inputs input[type="number"] {
   padding: 15px;
   width: 10px;  
-/*  border: solid 4px #990000;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-left: none;
@@ -111,7 +110,7 @@ header {
   font-size: 1rem;
   margin-top: 0px;
   margin-bottom: 5px;
-  text-align: right; *\
+  text-align: right;
 }
 
 #public-token {
