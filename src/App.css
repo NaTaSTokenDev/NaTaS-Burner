@@ -101,7 +101,7 @@ header {
 
 #transfer-inputs input[type="number"] {
   padding: 15px;
-  width: 10px;  // changed from 60
+  width: 10px;  
   border: solid 4px #990000;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -183,7 +183,7 @@ a:hover {
   padding: 15px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  border: solid 4px #490000;    // small 
+  border: solid 4px #490000;    
   outline: none;
   font-size: 1rem;
   border-right: none;
