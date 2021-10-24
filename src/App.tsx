@@ -121,7 +121,7 @@ const App = () => {
                />
               </div>
             ) : (
-              {*/  <div id="increment-decrement">  */}
+              {/*  <div id="increment-decrement">  */}
                 <h3 className="text-align-center">
                 Red Squares have been Elminated
                 </h3>
