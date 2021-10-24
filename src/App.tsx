@@ -177,7 +177,8 @@ const App = () => {
                 />
               </div>
             )}
-            <p>
+   
+               <p className="text-align-center">
               <i className="far fa-file-code"></i>&nbsp;
               <a
                 href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
@@ -187,10 +188,10 @@ const App = () => {
                 {contractAddress}
               </a>
             </p>
-            <p>
+             <p className="text-align-center">
               <i className="far fa-address-card"></i>&nbsp; {userAddress}
             </p>
-            <p>
+             <p className="text-align-center">
               <i className="fas fa-piggy-bank"></i>&nbsp;
               {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
             </p>
