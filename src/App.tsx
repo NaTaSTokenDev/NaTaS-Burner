@@ -123,7 +123,7 @@ const App = () => {
             ) : (
               <div id="increment-decrement">
                 <h3 className="text-align-center">
- //               Current counter: <span>{storage}</span>
+                Red Squares have been Elminated
                 </h3>
                 <div className="grid-container">
                   <div>1</div>
