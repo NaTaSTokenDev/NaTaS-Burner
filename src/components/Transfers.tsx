@@ -22,7 +22,7 @@ const Transfers = ({
           .transfer({ to: recipient, amount: parseInt(amount) })
           .send();
         await op.confirmation();
-        {*/     setRecipient("");
+        {/*     setRecipient("");
         setAmount(""); */}
         const balance = await Tezos.tz.getBalance(userAddress);
         setUserBalance(balance.toNumber());
