@@ -3,7 +3,7 @@ import { TezosToolkit } from "@taquito/taquito";
 
 const Transfers = ({
   Tezos,
-  setUserBalance,
+//  setUserBalance,
   userAddress
 }: {
   Tezos: TezosToolkit;
@@ -25,7 +25,7 @@ const Transfers = ({
         setRecipient("");
         setAmount("");
         const balance = await Tezos.tz.getBalance(userAddress);
-        setUserBalance(balance.toNumber());
+//        setUserBalance(balance.toNumber());
       } catch (error) {
         console.log(error);
       } finally {
