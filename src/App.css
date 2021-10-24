@@ -101,7 +101,7 @@ header {
 
 #transfer-inputs input[type="number"] {
   padding: 15px;
-  width: 60px;
+  width: 10px;  // changed from 60
   border: solid 4px #990000;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
