@@ -238,7 +238,7 @@ const App = () => {
               </div>
             )}
    
-//               <p className="text-align-center">
+//         {/*      <p className="text-align-center">
 //              <i className="far fa-file-code"></i>&nbsp;
 //              <a
 //                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
@@ -247,7 +247,7 @@ const App = () => {
 //              >
 //                {contractAddress}
 //              </a>
- //           </p>
+ //           </p>  */}
              <p className="text-align-center">
               <i className="far fa-address-card"></i>&nbsp; {userAddress}
             </p>
