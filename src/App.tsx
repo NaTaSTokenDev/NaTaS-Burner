@@ -240,13 +240,13 @@ const App = () => {
    
                <p className="text-align-center">
               <i className="far fa-file-code"></i>&nbsp;
-              <a
-                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {contractAddress}
-              </a>
+//              <a
+//                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
+//                target="_blank"
+//                rel="noopener noreferrer"
+//              >
+//                {contractAddress}
+//              </a>
             </p>
              <p className="text-align-center">
               <i className="far fa-address-card"></i>&nbsp; {userAddress}
