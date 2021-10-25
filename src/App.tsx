@@ -121,7 +121,7 @@ const App = () => {
                />
               </div>
             ) : (
-//              <div id="increment-decrement">  
+              <div id="increment-decrement">  
                 <div>
                 <h3 className="text-align-center">
                 Red Numbers have been eliminated
@@ -238,7 +238,7 @@ const App = () => {
               </div>
             )}
    
-//         {/*      <p className="text-align-center">
+         {/*      <p className="text-align-center">
 //              <i className="far fa-file-code"></i>&nbsp;
 //              <a
 //                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
