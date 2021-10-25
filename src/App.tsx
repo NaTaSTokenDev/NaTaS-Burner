@@ -124,7 +124,7 @@ const App = () => {
 //              <div id="increment-decrement">  
                 <div>
                 <h3 className="text-align-center">
-                Red Numbers have been Elminated
+                Red Numbers have been eliminated
                 </h3>
                 <div className="grid-container">
                   <div>1</div>
