@@ -168,14 +168,14 @@ const App = () => {
                   <div>39</div>
                   <div>40</div>
                 </div>
-        //        <UpdateContract
-         //         contract={contract}
-        //          setUserBalance={setUserBalance}
-        //          Tezos={Tezos}
-        //          userAddress={userAddress}
-         //         setStorage={setStorage}
-          //      />
-            //  </div>
+                <UpdateContract
+                  contract={contract}
+                  setUserBalance={setUserBalance}
+                  Tezos={Tezos}
+                  userAddress={userAddress}
+                setStorage={setStorage}
+                />
+              </div>
             )}
    
                <p className="text-align-center">
