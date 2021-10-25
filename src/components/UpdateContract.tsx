@@ -53,7 +53,7 @@ const UpdateContract = ({ contract, setUserBalance, Tezos, userAddress, setStora
           </span>
         ) : (
           <span>
-            <i className="fas fa-plus"></i>&nbsp; Increment by 1
+            <i className="fas fa-plus"></i>&nbsp; Buy DeMNs
           </span>
         )}
       </button>
@@ -64,7 +64,7 @@ const UpdateContract = ({ contract, setUserBalance, Tezos, userAddress, setStora
           </span>
         ) : (
           <span>
-            <i className="fas fa-minus"></i>&nbsp; Decrement by 1
+            <i className="fas fa-minus"></i>&nbsp; Burn Again
           </span>
         )}
       </button>
