@@ -124,7 +124,7 @@ const App = () => {
 //              <div id="increment-decrement">  
                 <div>
                 <h3 className="text-align-center">
-                Red Squares have been Elminated
+                Red Numbers have been Elminated
                 </h3>
                 <div className="grid-container">
                   <div>1</div>
@@ -168,13 +168,13 @@ const App = () => {
                   <div>39</div>
                   <div>40</div>
                 </div>
-                <UpdateContract
-                  contract={contract}
-                  setUserBalance={setUserBalance}
-                  Tezos={Tezos}
-                  userAddress={userAddress}
-                  setStorage={setStorage}
-                />
+        //        <UpdateContract
+         //         contract={contract}
+        //          setUserBalance={setUserBalance}
+        //          Tezos={Tezos}
+        //          userAddress={userAddress}
+         //         setStorage={setStorage}
+          //      />
               </div>
             )}
    
