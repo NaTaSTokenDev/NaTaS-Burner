@@ -113,8 +113,8 @@ const App = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
-                <h3 className="text-align-center">Win The Prize Pool of 100 NaTaS Tokens if your number is 42</h3>
+                <h1 className="text-align-center">Burn 100 DeMN Tokens</h3>
+                <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
                 <h3 className="text-align-center">Numbers picked during this round are eleminated</h3>
                 <Transfers
                   Tezos={Tezos}
@@ -229,8 +229,8 @@ const App = () => {
                   <div>98</div>
                   <div>99</div>
                   <div>100</div>
-                  <h3 className="text-align-center">Numbers picked during this round are eleminated</h3>
                 </div>
+                  <h3 className="text-align-center"></h3>
                 <UpdateContract
                   contract={contract}
                   setUserBalance={setUserBalance}
