@@ -116,7 +116,7 @@ const App = () => {
                 <h1 className="text-align-center">Burn 100 DeMN Tokens</h1>
                 <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
                 <h3 className="text-align-center">Numbers picked during this round are eleminated</h3>
-                <div className="area">⚠ achtung ⚠</div>
+                <div className="area">Prize Pool: TBD</div>
                 <Transfers
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
