@@ -113,7 +113,7 @@ const App = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h1 className="text-align-center">Burn 100 DeMN Tokens</h3>
+                <h1 className="text-align-center">Burn 100 DeMN Tokens</h1>
                 <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
                 <h3 className="text-align-center">Numbers picked during this round are eleminated</h3>
                 <Transfers
