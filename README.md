@@ -1,7 +1,7 @@
 # NaTaS Burner
 
-Burn 50 DeMN Tokens and elimate a number from the board
-Hit 99 and win the NaTaS Pool
+Burn 100 DeMN Tokens and elimate a number from the board
+Hit 42 and win the NaTaS Pool
 
   |\___/|
  /       \
