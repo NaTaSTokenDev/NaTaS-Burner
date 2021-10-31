@@ -100,7 +100,7 @@ header {
 }
 
 #transfer-inputs input[type="number"] {
-  width: 10px;  
+  width: 15px;  
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-left: none;
@@ -194,7 +194,7 @@ a:hover {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  grid-gap: 16px;
+  grid-gap: 8px;
   background-color: #990000;
   padding: 14px;
 }
@@ -203,7 +203,7 @@ a:hover {
   background-color: #8aa2a8;
   border: 1px solid black;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 
