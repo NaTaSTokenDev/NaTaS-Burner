@@ -253,11 +253,12 @@ const App = () => {
 //              </a>
  //           </p>  */}
              <p className="text-align-center">
-              <i className="far fa-address-card"></i>&nbsp; {userAddress}
+               {*/   <i className="far fa-address-card"></i>&nbsp;*/} 
+                Adress Logged In: {userAddress}   */}
             </p>
              <p className="text-align-center">
                {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
-                Balance {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
+                Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
             </p>
           </div>
           <DisconnectButton
