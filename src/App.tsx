@@ -253,7 +253,7 @@ const App = () => {
 //              </a>
  //           </p>  */}
              <p className="text-align-center">
-               {*/   <i className="far fa-address-card"></i>&nbsp; */} 
+               {/*   <i className="far fa-address-card"></i>&nbsp; */} 
                 Adress Logged In: {userAddress}   */}
             </p>
              <p className="text-align-center">
