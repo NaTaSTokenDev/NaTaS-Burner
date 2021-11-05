@@ -256,7 +256,7 @@ const App = () => {
               <i className="far fa-address-card"></i>&nbsp; {userAddress}
             </p>
              <p className="text-align-center">
-     //         <i className="fas fa-piggy-bank"></i>&nbsp;
+               {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
                 Balance {(userBalance / 1000000).toLocaleString("en-US")} ꜩ
             </p>
           </div>
