@@ -293,17 +293,13 @@ const App = () => {
           <div id="content">
             <p>Welcome!</p>
             <p>
-              Burn 100 of your DeMN coins you will have a 1 in 100 chance to win the 
-              NaTaS Token Prize Pool.
+              Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
+              NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
               <br />
-              If you have not done so already, go to the{"NaTaS Token Website"}
-              <a
-                href="https://natastoken.xyz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                for more information
-              </a>{" "}
+              If you have not done so already, go to the
+              <a href="https://natastoken.xyz">NaTaS Token Website</a>
+              for more information
+              <br />
               Happy Burning
             </p>
             <p>Beta Test - Not Public</p>
