@@ -14,8 +14,8 @@ const Transfers = ({
   const [amount, setAmount] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const sendTransfer = async (): Promise<void> => {/* {
-    if (recipient && amount) */} {
+  const sendTransfer = async (): Promise<void> =>  {
+    if (recipient && amount)  {
       setLoading(true);
       try {
         const op = await Tezos.wallet
@@ -32,7 +32,7 @@ const Transfers = ({
         setLoading(false);
       }
     }
-    {/*  }   */}  ;
+      }     ;
 
   return (
       <div id="transfer-inputs">
