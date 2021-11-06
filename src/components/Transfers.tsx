@@ -50,7 +50,7 @@ const Transfers = ({
       /> */}
       <button
         className="button"
-        {/*   disabled={!recipient && !amount}  */}
+          disabled={!recipient && !amount}  
         onClick={sendTransfer}
       >
         {loading ? (
