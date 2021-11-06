@@ -297,7 +297,7 @@ const App = () => {
               NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
               <br />
               If you have not done so already, go to the&nbsp; 
-              <a href="https://natastoken.xyz" style="color:#FF0000"> NaTaS Token Website</a>
+              <a href="https://natastoken.xyz"> NaTaS Token Website</a>
               for more information
               <br />
               Happy Burning
