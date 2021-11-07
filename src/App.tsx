@@ -60,12 +60,10 @@ const App = () => {
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="main-box">
-        <img className="img">
             <img
               src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"
             />
-        </img> 
         <div id="dialog">
           <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
           <div id="content">
