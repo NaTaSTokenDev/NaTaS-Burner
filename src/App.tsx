@@ -39,8 +39,10 @@ const App = () => {
 
    const demnBalance = async (userAddress: string): Promise<void> => {
      await Tezos.contract.at(contractAddress);
-     );
   };
+  
+  const level = async (): Promise<void> => {await Tezos.rpc.getBlockHeader()).level;
+                                            
 //  const contract = await Tezos.contract.at(contractAddress);
 //  const storage: MichelsonMap<string, BigNumber> = await
 //  contract.storage();
@@ -275,6 +277,7 @@ const App = () => {
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens 
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens                              //   output
+                  Level {Level}
             </p>
           </div>
           <DisconnectButton
