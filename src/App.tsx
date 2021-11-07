@@ -60,6 +60,7 @@ const App = () => {
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="main-box">
+        <img className="img">
         <img
               src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"
