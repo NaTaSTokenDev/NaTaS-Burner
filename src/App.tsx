@@ -105,7 +105,7 @@ const App = () => {
           </div>
         </div>
         <div id="footer">
-          <img src="/images/NatasTokenLogo.png"
+          <img src="/images/NatasBurnerLogo.png"
               alt="Natas and Demon Token Logo"
              />
         </div>
@@ -115,7 +115,7 @@ const App = () => {
     return (
       <div className="main-box">
                 <img
-              src="/images/NatasTokenLogo.png"
+              src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"  
                 />
         <div id="tabs">
