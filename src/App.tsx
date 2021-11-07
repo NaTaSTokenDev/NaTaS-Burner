@@ -61,7 +61,7 @@ const App = () => {
     return (
       <div className="main-box">
         <img
-              src="/images/coollogo_com-28728132.png"
+              src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"
             />
         <div id="dialog">
@@ -105,7 +105,7 @@ const App = () => {
           </div>
         </div>
         <div id="footer">
-          <img src="/images/natas_demn_sm.png"
+          <img src="/images/NatasTokenLogo.png"
               alt="Natas and Demon Token Logo"
              />
         </div>
@@ -115,7 +115,7 @@ const App = () => {
     return (
       <div className="main-box">
                 <img
-              src="/images/coollogo_com-28728132 (1).png"
+              src="/images/NatasTokenLogo.png"
               alt="Buy Natas"  
                 />
         <div id="tabs">
@@ -310,7 +310,7 @@ const App = () => {
       <div className="main-box">
         <div className="title">
                   <img
-              src="/images/coollogo_com-28728132 (1).png"
+              src="/images/natastokenlogo.png"
               alt="Buy Natas"
 
             />
