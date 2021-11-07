@@ -276,7 +276,7 @@ const App = () => {
                {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
                   Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
-                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens 
+         //         Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens 
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens                              //   output
                   Level {Level}
             </p>
