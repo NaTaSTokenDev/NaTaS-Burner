@@ -25,7 +25,7 @@ const App = () => {
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
-//  const [storage, setStorage] = useState<number>(0);
+  const [storage, setStorage] = useState<number>(666);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
@@ -36,9 +36,9 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
-  const contract = await Tezos.contract.at(contractAddress);
-  const storage: MichelsonMap<string, BigNumber> = await
-  contract.storage();
+//  const contract = await Tezos.contract.at(contractAddress);
+//  const storage: MichelsonMap<string, BigNumber> = await
+//  contract.storage();
   
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
