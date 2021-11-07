@@ -26,6 +26,12 @@ body,
   align-items: center;
 }
 
+.centerImage
+{
+ text-align:center;
+ display:block;
+}
+
 h1 {
   color: #ffffff;
   text-align: center;
