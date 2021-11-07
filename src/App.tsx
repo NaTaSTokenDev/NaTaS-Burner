@@ -113,7 +113,7 @@ const App = () => {
     );
   } else if (userAddress && !isNaN(userBalance)) {
     return (
-      <div className="centerImage">
+      <div className="main-box">
                 <img
               src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"  
