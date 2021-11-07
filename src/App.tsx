@@ -37,7 +37,7 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
-   const demnBalance = async (userAddress: string): Promise<void> => {
+   const demnBalance = async (userAddress: string) => {
      await Tezos.contract.at(contractAddress);
   };
   
