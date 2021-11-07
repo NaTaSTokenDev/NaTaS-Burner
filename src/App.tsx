@@ -61,11 +61,11 @@ const App = () => {
     return (
       <div className="main-box">
         <img className="img">
-        <img
+            <img
               src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"
             />
-          </img? 
+        </img> 
         <div id="dialog">
           <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
           <div id="content">
@@ -314,7 +314,6 @@ const App = () => {
                   <img
               src="/images/natastokenlogo.png"
               alt="Buy Natas"
-
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
@@ -329,7 +328,6 @@ const App = () => {
              alt="Buy Natas"
             />.  */}
           <div id="content">
-            <p>Welcome!</p>
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
               NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
@@ -339,8 +337,9 @@ const App = () => {
               for more information
               <br />
               Happy Burning
+              <br />
+              Beta Test - Not Public
             </p>
-            <p>Beta Test - Not Public</p>
           </div>
           <ConnectButton
             Tezos={Tezos}
