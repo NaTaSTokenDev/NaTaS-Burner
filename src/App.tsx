@@ -319,13 +319,13 @@ const App = () => {
           </a>
         </div>
         <div id="dialog">
-                   <img
+          {\*         <img
               src="/images/coollogo_com-28728132.png"
               alt="Buy Natas"
-            />
+            />.  */}
           <div id="content">
             <p>Welcome!</p>
-            <p>
+            <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
               NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
               <br />
