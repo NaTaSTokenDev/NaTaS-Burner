@@ -41,7 +41,7 @@ const App = () => {
      await Tezos.contract.at(contractAddress);
   };
   
-  const level = async (): Promise<void> => (await Tezos.rpc.getBlockHeader()).level;
+  const level = async () => (await Tezos.rpc.getBlockHeader()).level;
                                            
                                             
 //  const contract = await Tezos.contract.at(contractAddress);
