@@ -310,7 +310,7 @@ const App = () => {
       <div className="main-box">
         <div className="title">
                   <img
-              src="/images/natastokenlogo.png"
+              src="/images/NatasBurnerLogo.png"
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
