@@ -113,7 +113,7 @@ const App = () => {
     return (
       <div className="main-box">
                 <img
-              src="/images/coollogo_com-28728132.png"
+              src="/images/coollogo_com-28728132 (1).png"
               alt="Buy Natas"
             />
         <div id="tabs">
@@ -308,7 +308,7 @@ const App = () => {
       <div className="main-box">
         <div className="title">
                   <img
-              src="/images/coollogo_com-28728132.png"
+              src="/images/coollogo_com-28728132 (1).png"
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
@@ -320,7 +320,7 @@ const App = () => {
         </div>
         <div id="dialog">
           {/*         <img
-              src="/images/coollogo_com-28728132.png"
+              src="/images/coollogo_com-28728132 (1).png"
               alt="Buy Natas"
             />.  */}
           <div id="content">
