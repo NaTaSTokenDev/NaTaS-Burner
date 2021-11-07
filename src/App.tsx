@@ -63,6 +63,7 @@ const App = () => {
         <img
               src="/images/coollogo_com-28728132.png"
               alt="Buy Natas"
+              align="center"
             />
         <div id="dialog">
           <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
@@ -105,7 +106,9 @@ const App = () => {
           </div>
         </div>
         <div id="footer">
-          <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
+          <img src="/images/natas_demn_sm.png"
+              alt="Natas and Demon Token Logo"
+              align="center"/>
         </div>
       </div>
     );
@@ -115,7 +118,8 @@ const App = () => {
                 <img
               src="/images/coollogo_com-28728132 (1).png"
               alt="Buy Natas"
-            />
+              align="center"  
+                />
         <div id="tabs">
           <div
             id="transfer"
@@ -310,6 +314,7 @@ const App = () => {
                   <img
               src="/images/coollogo_com-28728132 (1).png"
               alt="Buy Natas"
+
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
@@ -321,7 +326,8 @@ const App = () => {
         <div id="dialog">
           {/*         <img
               src="/images/coollogo_com-28728132 (1).png"
-              alt="Buy Natas"
+             alt="Buy Natas"
+             align="center
             />.  */}
           <div id="content">
             <p>Welcome!</p>
