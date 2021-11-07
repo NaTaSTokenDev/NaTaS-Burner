@@ -319,7 +319,7 @@ const App = () => {
           </a>
         </div>
         <div id="dialog">
-          {\*         <img
+          {/*         <img
               src="/images/coollogo_com-28728132.png"
               alt="Buy Natas"
             />.  */}
