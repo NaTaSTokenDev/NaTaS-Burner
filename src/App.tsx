@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TezosToolkit } from "@taquito/taquito";
+import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
