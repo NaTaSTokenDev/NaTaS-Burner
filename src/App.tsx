@@ -112,7 +112,10 @@ const App = () => {
   } else if (userAddress && !isNaN(userBalance)) {
     return (
       <div className="main-box">
-        <h1>NaTaS BURNER</h1>
+                <img
+              src="/images/coollogo_com-28728132.png"
+              alt="Buy Natas"
+            />
         <div id="tabs">
           <div
             id="transfer"
@@ -304,7 +307,10 @@ const App = () => {
     return (
       <div className="main-box">
         <div className="title">
-          <h1>NaTaS BURNER</h1>
+                  <img
+              src="/images/coollogo_com-28728132.png"
+              alt="Buy Natas"
+            />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
             <img
               src="/images/natas_demn_sm.png"
@@ -313,7 +319,10 @@ const App = () => {
           </a>
         </div>
         <div id="dialog">
-          <header>NaTaS BURNER</header>
+                   <img
+              src="/images/coollogo_com-28728132.png"
+              alt="Buy Natas"
+            />
           <div id="content">
             <p>Welcome!</p>
             <p>
