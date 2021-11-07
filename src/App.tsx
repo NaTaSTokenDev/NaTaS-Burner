@@ -39,7 +39,7 @@ const App = () => {
 
    const demnBalance = async (userAddress: string): Promise<void> => {
      const contract2 = await Tezos.contract.at(contractAddress);
-     MichelsonMap<string, BigNumber> = await;
+     MichelsonMap<string, BigNumber>;
   ));
   };
 //  const contract = await Tezos.contract.at(contractAddress);
@@ -272,9 +272,10 @@ const App = () => {
             </p>
              <p className="text-align-center">
                {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
-                Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
-               Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
-                 Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
+                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
+                  Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
+                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens 
+                  Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens                              //   output
             </p>
           </div>
           <DisconnectButton
