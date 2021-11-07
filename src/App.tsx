@@ -41,8 +41,8 @@ const App = () => {
      await Tezos.contract.at(contractAddress);
   };
   
-  const level = async (): Promise<void> => {await Tezos.rpc.getBlockHeader()).level;
-                                           };
+  const level = async (): Promise<void> => (await Tezos.rpc.getBlockHeader()).level;
+                                           
                                             
 //  const contract = await Tezos.contract.at(contractAddress);
 //  const storage: MichelsonMap<string, BigNumber> = await
