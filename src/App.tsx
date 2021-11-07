@@ -256,7 +256,6 @@ const App = () => {
                   <div>99</div>
                   <div>100</div>
                 </div>
-                  <h3 className="text-align-center"></h3>
                 <UpdateContract
                   contract={contract}
                   setUserBalance={setUserBalance}
@@ -278,16 +277,14 @@ const App = () => {
 //              </a>
 //            </p>  */}
              <p className="text-align-center">
-               {/*   <i className="far fa-address-card"></i>&nbsp; */} 
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-               {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
+               {/*         <i className="fas fa-piggy-bank"></i>&nbsp; 
                   Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
-               {/*       Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
+                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens                            
-                  Level {level}
             </p>
           </div>
           <DisconnectButton
