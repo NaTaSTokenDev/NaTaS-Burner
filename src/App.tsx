@@ -106,6 +106,7 @@ const App = () => {
         </div>
         <div id="text-align-center">
           <img src="/images/NatasBurnerLogo.png"
+              class="centerImage"
               alt="Natas and Demon Token Logo"
              />
         </div>
@@ -116,6 +117,7 @@ const App = () => {
       <div className="main-box">
                 <img
               src="/images/NatasBurnerLogo.png"
+              class="centerImage"
               alt="Buy Natas"  
                 />
         <div id="tabs">
@@ -311,6 +313,7 @@ const App = () => {
         <div className="title">
                   <img
               src="/images/NatasBurnerLogo.png"
+              class="centerImage"   
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
