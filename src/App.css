@@ -1,5 +1,5 @@
 html,
-  { background-color: #fff;}
+  { background-color: #000000;}
 body,
 #root {
   height: 100%;
@@ -8,8 +8,6 @@ body,
   padding: 0px;
   font-size: 1rem;
 }
-
-html {background-color: black}
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
@@ -36,6 +34,8 @@ h1 {
 h3 {
   color: #ffffff;
 }
+
+img {align: center}
 
 p {
   color: #ffffff;
