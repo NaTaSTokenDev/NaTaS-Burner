@@ -38,9 +38,8 @@ const App = () => {
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
    const demnBalance = async (userAddress: string): Promise<void> => {
-     const contract2 = await Tezos.contract.at(contractAddress);
-     MichelsonMap<string, BigNumber>;
-  ));
+     await Tezos.contract.at(contractAddress);
+     );
   };
 //  const contract = await Tezos.contract.at(contractAddress);
 //  const storage: MichelsonMap<string, BigNumber> = await
