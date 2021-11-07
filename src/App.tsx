@@ -6,6 +6,7 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
+import { BigNumber } from 'bignumber.js'; 
 
 enum BeaconConnection {
   NONE = "",
@@ -31,7 +32,14 @@ const App = () => {
 
   // Granadanet Increment/Decrement contract
   const contractAddress: string = "KT1K3XVNzsmur7VRgY8CAHPUENaErzzEpe4e";
+  
+  // DeMN Contract Address
+  const contractAddress2: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
+  const contract = await Tezos.contract.at(contractAddress2);
+  const storage2: MichelsonMap<string, BigNumber> = await
+  contract.storage2();
+  
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
@@ -259,6 +267,7 @@ const App = () => {
              <p className="text-align-center">
                {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
                 Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
+               Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
             </p>
           </div>
           <DisconnectButton
