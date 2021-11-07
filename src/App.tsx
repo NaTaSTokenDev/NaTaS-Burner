@@ -63,7 +63,6 @@ const App = () => {
         <img
               src="/images/coollogo_com-28728132.png"
               alt="Buy Natas"
-              align="center"
             />
         <div id="dialog">
           <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
@@ -108,7 +107,7 @@ const App = () => {
         <div id="footer">
           <img src="/images/natas_demn_sm.png"
               alt="Natas and Demon Token Logo"
-              align="center"/>
+             />
         </div>
       </div>
     );
@@ -117,8 +116,7 @@ const App = () => {
       <div className="main-box">
                 <img
               src="/images/coollogo_com-28728132 (1).png"
-              alt="Buy Natas"
-              align="center"  
+              alt="Buy Natas"  
                 />
         <div id="tabs">
           <div
@@ -327,7 +325,6 @@ const App = () => {
           {/*         <img
               src="/images/coollogo_com-28728132 (1).png"
              alt="Buy Natas"
-             align="center
             />.  */}
           <div id="content">
             <p>Welcome!</p>
