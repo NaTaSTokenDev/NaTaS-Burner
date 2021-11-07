@@ -279,7 +279,7 @@ const App = () => {
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
                {/*       Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens                            
-                  Level {Level}
+                  Level {level}
             </p>
           </div>
           <DisconnectButton
