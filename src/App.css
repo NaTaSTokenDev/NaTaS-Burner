@@ -17,6 +17,8 @@ body,
 
 .main-box {
   margin: auto;
+  text-align:center;
+  display:block;
 }
 
 .title {
