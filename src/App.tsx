@@ -37,6 +37,11 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
+   const demnBalance = async (userAddress: string): Promise<void> => {
+     const contract2 = await Tezos.contract.at(contractAddress);
+     MichelsonMap<string, BigNumber> = await;
+  ));
+  };
 //  const contract = await Tezos.contract.at(contractAddress);
 //  const storage: MichelsonMap<string, BigNumber> = await
 //  contract.storage();
@@ -269,6 +274,7 @@ const App = () => {
                {/*         <i className="fas fa-piggy-bank"></i>&nbsp;   */}
                 Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
                Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
+                 Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
             </p>
           </div>
           <DisconnectButton
