@@ -6,7 +6,7 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
-import { BigNumber } from 'bignumber.js'; 
+import { BigNumber } from 'bignumber.js';
 
 enum BeaconConnection {
   NONE = "",
@@ -17,6 +17,7 @@ enum BeaconConnection {
 }
 
 const App = () => {
+  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
   );
@@ -25,7 +26,7 @@ const App = () => {
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
-  const [storage, setStorage] = useState<number>(666);
+ // const [storage, setStorage] = useState<number>(666); 
   const [storage2, setStorage2] = useState<number>(446);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
