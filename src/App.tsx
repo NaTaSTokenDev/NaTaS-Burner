@@ -17,7 +17,7 @@ enum BeaconConnection {
 }
 
 const App = () => {
-  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
+  
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
   );
@@ -286,6 +286,21 @@ const App = () => {
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
+               Tezos.contract
+  .at('KT1DLmrFWNn3o4zScTNpVE6VveAcFubBkmXW')
+  .then((myContract) => {
+    return myContract.storage();
+  })
+  .then((myStorage) => {
+    const value = myStorage['theMap'].get({
+      0: '2', //nat
+      1: 'tz1h3rQ8wBxFd8L9B3d7Jhaawu6Z568XU3xY', //address
+    });
+    println(`Values associated with this key : amount : ${value[Object.keys(value)[0]]}, quantity :
+    ${value[Object.keys(value)[1]]}`);
+  })
+  .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
+               <br/>
                level {level}
                storage2 {storage2}
                demnBalance {demnBalance}
