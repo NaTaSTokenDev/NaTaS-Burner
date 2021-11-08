@@ -286,14 +286,6 @@ const App = () => {
                   Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
-              Tezos.contract.at('KT1Ho26P3cnTjeLp29VPuHj2rLGfZeUKTdMo')
-  .then((contract) => {
-    println(`List all contract methods: ${Object.keys(contract.methods)}\n`);
-    println(`Inspect the signature of the 'set_child_record' contract method: ${
-      JSON.stringify(contract.methods.set_child_record().getSignature(), null, 2)
-    }`);
-  })
-  .catch((error) => println(`Error: ${JSON.stringify(error, null, 2)}`));
                <br/>
                level {level}
                storage2 {storage2}
