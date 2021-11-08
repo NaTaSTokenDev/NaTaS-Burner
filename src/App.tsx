@@ -26,7 +26,7 @@ const App = () => {
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
- // const [storage, setStorage] = useState<number>(666); 
+  const [storage, setStorage] = useState<number>(666); 
   const [storage2, setStorage2] = useState<number>(446);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
