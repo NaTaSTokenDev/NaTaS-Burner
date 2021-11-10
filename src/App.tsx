@@ -39,7 +39,7 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
-  const DemnBigmap = new Map();
+  const demnBigmap = new Map();
   
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
