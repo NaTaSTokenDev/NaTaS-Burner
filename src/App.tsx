@@ -39,20 +39,7 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
-   const demnBalance = async (userAddress: string) => {
-     await Tezos.contract.at(contractAddress);
-  };
-  
-  const level = async () => (await Tezos.rpc.getBlockHeader()).level;
-                                           
-                                            
-//  const contract = await Tezos.contract.at(contractAddress);
-//  const storage: MichelsonMap<string, BigNumber> = await
-//  contract.storage();
-  
-  const DemnBigmap = new Map([
-       "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
-    ]);
+  const DemnBigmap = new Map();
   
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
