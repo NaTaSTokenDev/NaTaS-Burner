@@ -279,6 +279,13 @@ const App = () => {
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
                {demnBigmap}
+               {let xhr = new XMLHttpRequest();
+xhr.open('get', 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0');
+xhr.send();
+
+xhr.onload = function() {
+    console.log(xhr.response);
+};}
                <br/>
                level {level}
                storage2 {storage2}
