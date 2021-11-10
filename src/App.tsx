@@ -287,7 +287,6 @@ xhr.onload = function() {
     console.log(xhr.response);
 };}
                <br/>
-               level {level}
                storage2 {storage2}
                demnBalance {demnBigmap}
             </p>
