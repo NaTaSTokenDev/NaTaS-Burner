@@ -50,6 +50,10 @@ const App = () => {
 //  const storage: MichelsonMap<string, BigNumber> = await
 //  contract.storage();
   
+  const DemnBigMap = new Map([
+       "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
+    ]);
+  
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
@@ -287,9 +291,7 @@ const App = () => {
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
-               let myMap = new Map([
-       "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
-    ]);
+               {demnBalance}
                <br/>
                level {level}
                storage2 {storage2}
