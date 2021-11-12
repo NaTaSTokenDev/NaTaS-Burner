@@ -39,7 +39,16 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
 
-  const demnBigmap = new Map();
+   const demnBalance = async (userAddress: string) => {
+     await Tezos.contract.at(contractAddress);
+  };
+  
+  const level = async () => (await Tezos.rpc.getBlockHeader()).level;
+                                           
+                                            
+//  const contract = await Tezos.contract.at(contractAddress);
+//  const storage: MichelsonMap<string, BigNumber> = await
+//  contract.storage();
   
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
@@ -278,10 +287,13 @@ const App = () => {
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
                   Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens
-};
+               let myMap = new Map([
+       "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
+    ]);
                <br/>
+               level {level}
                storage2 {storage2}
-               demnBalance {demnBigmap}
+               demnBalance {demnBalance}
             </p>
           </div>
           <DisconnectButton
@@ -357,4 +369,4 @@ const App = () => {
   }
 };
 
-export default App;}
+export default App;
