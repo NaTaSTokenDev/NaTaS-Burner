@@ -17,8 +17,7 @@ enum BeaconConnection {
 }
 
 const App = () => {
-  const [Tezos, setTezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://mainnet.api.tez.ie");
+  const [Tezos, setTezos] = useState<TezosToolkit> (new TezosToolkit("https://mainnet.api.tez.ie");
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
@@ -34,7 +33,10 @@ const App = () => {
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
   };
-                                            
+
+//  const contract = await Tezos.contract.at(contractAddress);
+//  const storage: MichelsonMap<string, BigNumber> = await
+//  contract.storage();                                 
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
