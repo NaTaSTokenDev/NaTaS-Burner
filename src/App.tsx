@@ -279,7 +279,7 @@ const App = () => {
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
                {fetch('http://example.com/movies.json')
                 .then(response => response.json())
-                 .then(data => console.log(data));}
+                 .then(data => console.log(data))}
             </p>
           </div>
           <DisconnectButton
