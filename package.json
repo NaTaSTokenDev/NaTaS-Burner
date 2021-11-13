@@ -26,7 +26,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i"
+    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i",
+    "Axios": "$ npm install axios"
   },
   "eslintConfig": {
     "extends": "react-app"
