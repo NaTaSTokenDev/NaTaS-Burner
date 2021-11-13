@@ -33,10 +33,6 @@ const App = () => {
   // const contract = await Tezos.contract.at(contractAddress);
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
-  const level = async () => (await Tezos.rpc.getBlockHeader()).level;                                                           
-  //  const contract = await Tezos.contract.at(contractAddress);
-  //  const storage: MichelsonMap<string, BigNumber> = await
-  //  contract.storage();  
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
@@ -44,8 +40,7 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
- // const demnBalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
-    }
+
   
   
   if (publicToken && (!userAddress || isNaN(userBalance))) {
