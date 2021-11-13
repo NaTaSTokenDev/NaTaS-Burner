@@ -41,7 +41,12 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
 
-  
+  componentDidMount() {
+    // Simple GET request using fetch
+    fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+        .then(response => response.json())
+        .then(data => this.setState({ totalReactPackages: data.total }));
+}
   
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
