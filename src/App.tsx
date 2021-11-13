@@ -43,7 +43,7 @@ const App = () => {
     qr.make();
     return { __html: qr.createImgTag(4) };
     };
-  const demnBalance = "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
+  const demnBalance = "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="centerImage">
@@ -267,18 +267,11 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-               {/*         <i className="fas fa-piggy-bank"></i>&nbsp; 
+               {/*       
                   Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
-                  Balance {(storage / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
-                  Balance {(storage2 / 1000000).toLocaleString("en-US")} DeMN Tokens 
-               let myMap = new Map([
-       "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"
-    ]);
                <br/>
-               level {level}
-               storage2 {storage2}
-               demnBalance {demnBalance}
+               DeMN Token Balance: {demnBalance}
             </p>
           </div>
           <DisconnectButton
