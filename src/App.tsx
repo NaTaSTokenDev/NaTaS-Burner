@@ -19,14 +19,14 @@ enum BeaconConnection {
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
-    );
-  const axios = require('axios').default;
+  );
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0); 
+  const [storage2, setStorage2] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
@@ -37,11 +37,18 @@ const App = () => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
-    return { __html: qr.createImgTag(4)
+    return { __html: qr.createImgTag(4) };
     };
-};
-  
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
+
+  axios.get('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0'')
+  .then((response) => {
+    console.log(response.data);
+    console.log(response.status);
+    console.log(response.statusText);
+    console.log(response.headers);
+    console.log(response.config);
+  });
   
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -269,9 +276,6 @@ const App = () => {
                {/*       
                   Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
-               {fetch('http://example.com/movies.json')
-                .then(response => response.json())
-                 .then(data => console.log(data))}
             </p>
           </div>
           <DisconnectButton
