@@ -269,9 +269,6 @@ const App = () => {
                {/*       
                   Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
                   Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
-               fust yedy {currentDemnbalance}
-               <br/>
-               DeMN Token Balance: {demnBalance}
             </p>
           </div>
           <DisconnectButton
