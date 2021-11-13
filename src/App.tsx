@@ -19,7 +19,7 @@ enum BeaconConnection {
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
-  );
+    );
   const axios = require('axios').default;
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
@@ -37,7 +37,10 @@ const App = () => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
-    return { __html: qr.createImgTag(4) };
+    return { __html: qr.createImgTag(4)
+    };
+};
+  
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
   
   if (publicToken && (!userAddress || isNaN(userBalance))) {
