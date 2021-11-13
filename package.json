@@ -2,7 +2,7 @@
   "name": "natas-burner",
   "version": "0.1",
   "private": true,
-  "homepage": "https://natasburner.netlify.app/",
+  "homepage": "https://natasburner.netlify.app",
   "dependencies": {
     "@ledgerhq/hw-transport-u2f": "^5.22.0",
     "@taquito/beacon-wallet": "^9.2.0-stablelib.0",
