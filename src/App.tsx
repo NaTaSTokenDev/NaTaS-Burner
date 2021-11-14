@@ -42,17 +42,24 @@ const App = () => {
     qr.make();
     return { __html: qr.createImgTag(4) };
 
-const useFetch = (url = 'http://www.abc.cd/test', options = null) => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(url, options)
-      .then(res => res.json())
-      .then(data => setData(data));
-  }, [url, options]);
-  return {data}
-}
 
- 
+ onst url = '"https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0"';
+const options = {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json;charset=UTF-8'
+  },
+  body: JSON.stringify({
+    a: 10,
+    b: 20
+  })
+};
+
+fetch(url, options)
+  .then(response => {
+    console.log(response.status);
+  });
     };
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
