@@ -41,11 +41,20 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
 
-useEffect(() => {
+fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+.then(data => {
+return data.json();
+})
+.then(post => {
+console.log(post.title);
+});
+  
+  
+  {/* useEffect(() => {
     // GET request using fetch inside useEffect React hook
     fetch('https://api.npms.io/v2/search?q=react')
         .then(response => response.json())
-        .then(data => setTotalReactPackages(data.total));
+        .then(data => setTotalReactPackages(data.total));   */}
 
 // empty dependency array means this effect will only run once (like componentDidMount in classes)
 }, []);
