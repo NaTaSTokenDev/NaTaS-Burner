@@ -32,10 +32,11 @@ const App = () => {
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
-  const demnBalance = () => {
-     return fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
-       .then((response) => response.json())
-       .then((data) => console.log(data));}
+  const [dBalance, setdBalance] = useState(null);
+ // const demnBalance = () => {
+//     return fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
+ //      .then((response) => response.json())
+ //      .then((data) => console.log(data));}
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
@@ -45,7 +46,11 @@ const App = () => {
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
 
-   
+   async function getData() {
+     const response - await fetch ("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
+     const data = await res.json();
+     setdBalance(data);
+   }
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -293,16 +298,18 @@ const App = () => {
     return (
       <div className="main-box">
         <div className="title">
-                  <img
+             <img
               src="/images/NatasBurnerLogo.png"
               className="centerImage"   
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
+            <p className="text-align-center">
             <img
               src="/images/natas_demn_sm.png"
               alt="Buy Natas"
             />
+            </p>
           </a>
         </div>
         <div id="dialog">
