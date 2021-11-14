@@ -46,11 +46,20 @@ const App = () => {
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
 
-   async function getData() {
-     const response = await fetch ("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
-     const data = await response.json();
-     setdBalance(data);
-   }
+   state = {
+    loading: true
+};
+  async componetDidMount() {
+    const url = "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data.results[0]);
+  
+ //  async function getData() {
+  //   const response = await fetch ("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
+ //    const data = await response.json();
+//     setdBalance(data);
+ //  }
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -276,7 +285,7 @@ const App = () => {
                 Address Logged In: {userAddress} 
             </p>
              <p className="text-align-center">
-               DeMN Balance: {demnBalance}
+ //              DeMN Balance: {demnBalance}
             </p>
           </div>
           <DisconnectButton
