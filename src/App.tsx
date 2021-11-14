@@ -272,7 +272,7 @@ const App = () => {
             
              <p className="text-align-center">
                 Address Logged In: {userAddress}  
-               {/*      Balance 2 {data}   */}
+               DeMN Balance {demnBalance}
             </p>
           </div>
           <DisconnectButton
