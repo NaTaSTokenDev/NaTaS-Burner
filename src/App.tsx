@@ -46,7 +46,7 @@ fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuq
 return data.json();
 })
 .then(post => {
-console.log(post.title);
+console.log(data);
 });
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
