@@ -31,24 +31,21 @@ const App = () => {
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
-  // const contract = await Tezos.contract.at(contractAddress);
-  // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
+  const demnBalance = () => {'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0'
+     return fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+       .then((response) => response.json())
+       .then((data) => console.log(data));}
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
     };
- // const currentDemnbalance = "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
-
-//  const useFetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
-//    console.log(data);
   
-   const demnBalance = () => {'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0'
-     return fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
-       .then((response) => response.json())
-       .then((data) => console.log(data));}
+ // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
+
+   
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -271,7 +268,8 @@ const App = () => {
 //            </p>  */}
             
              <p className="text-align-center">
-                Address Logged In: {userAddress}  
+                Address Logged In: {userAddress} 
+               <br>
                DeMN Balance {demnBalance}
             </p>
           </div>
