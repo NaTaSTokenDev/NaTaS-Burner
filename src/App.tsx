@@ -269,8 +269,9 @@ const App = () => {
             
              <p className="text-align-center">
                 Address Logged In: {userAddress} 
+            </p>
              <p className="text-align-center">
-               DeMN Balance {demnBalance}
+               DeMN Balance: {demnBalance}
             </p>
           </div>
           <DisconnectButton
