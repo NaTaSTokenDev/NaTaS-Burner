@@ -41,13 +41,10 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
 
-fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
-.then(data => {
-return data.json();
-})
-.then(post => {
-console.log(data);
-});
+    const demnBalance = () => {
+      return fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+        .then((response) => response.json())
+        .then((data) => console.log(data));}
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -273,8 +270,8 @@ console.log(data);
             </p>
              <p className="text-align-center">
                {/*       
-                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
-                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
+                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens   */}
+                  Balance {demnBalance}
             </p>
           </div>
           <DisconnectButton
