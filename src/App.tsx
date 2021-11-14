@@ -41,11 +41,18 @@ const App = () => {
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
- const demnBalance = {
-  fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
-    .then((resp) => resp.json())
-    .then((data) => {console.log(data)})
-  };
+
+const useFetch = (url = 'http://www.abc.cd/test', options = null) => {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(url, options)
+      .then(res => res.json())
+      .then(data => setData(data));
+  }, [url, options]);
+  return {data}
+}
+export default useFetch;
+ 
     };
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
@@ -283,7 +290,7 @@ const App = () => {
                 Address Logged In: {userAddress} 
             </p>
              <p className="text-align-center">
-               DeMN Balance: {demnBalance}
+               DeMN Balance: {data}
             </p>
           </div>
           <DisconnectButton
