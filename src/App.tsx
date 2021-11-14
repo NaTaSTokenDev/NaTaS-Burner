@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, } from "react";
+import useFetch from "react-fetch-hook"
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -39,12 +40,15 @@ const App = () => {
     qr.make();
     return { __html: qr.createImgTag(4) };
     };
- // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
+ // const currentDemnbalance = "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
 
-    const demnBalance = () => {
-      return fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
-        .then((response) => response.json())
-        .then((data) => console.log(data));}
+  const {data} = useFetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
+     console.log(data);
+  
+  const demnBalance = () => {'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0'
+     return fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+       .then((response) => response.json())
+       .then((data) => console.log(data));}
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -265,13 +269,11 @@ const App = () => {
 //                {contractAddress}
 //              </a>
 //            </p>  */}
+            
              <p className="text-align-center">
                 Address Logged In: {userAddress}  
-            </p>
-             <p className="text-align-center">
-               {/*       
-                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens   */}
-                  Balance {demnBalance}
+                Balance {demnBalance}
+                Balance 2 {data}
             </p>
           </div>
           <DisconnectButton
