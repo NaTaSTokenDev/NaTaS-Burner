@@ -48,7 +48,7 @@ const App = () => {
 
    async function getData() {
      const response = await fetch ("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
-     const data = await res.json();
+     const data = await response.json();
      setdBalance(data);
    }
     
