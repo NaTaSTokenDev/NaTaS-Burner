@@ -269,7 +269,7 @@ const App = () => {
             
              <p className="text-align-center">
                 Address Logged In: {userAddress} 
-               <br>
+             <p className="text-align-center">
                DeMN Balance {demnBalance}
             </p>
           </div>
