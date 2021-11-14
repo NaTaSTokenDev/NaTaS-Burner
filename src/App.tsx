@@ -51,7 +51,7 @@ const useFetch = (url = 'http://www.abc.cd/test', options = null) => {
   }, [url, options]);
   return {data}
 }
-export default useFetch;
+
  
     };
   
@@ -369,3 +369,4 @@ export default useFetch;
 };
 
 export default App;
+export default useFetch;
