@@ -44,10 +44,8 @@ const App = () => {
  const demnBalance = {
   fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
     .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data);
-  })
-}
+    .then((data) => {console.log(data)})
+  };
     };
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
