@@ -7,7 +7,6 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
-import { BigNumber } from 'bignumber.js';
 
 enum BeaconConnection {
   NONE = "",
@@ -43,12 +42,14 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
 
 
- fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+ const fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
   .then(response => response.json())
   .then(data => console.log(data));
     
     
     };
+  
+  
   
  // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
 
