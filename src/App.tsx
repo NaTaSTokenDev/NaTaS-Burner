@@ -281,8 +281,28 @@ const App = () => {
     );
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
+      <div className="main-box">
         <div id="centerImage">
-               <img src="/images/NatasBurnerLogo.png" alt="Natas Burner Logo"/>
+                  <img
+              src="/images/NatasBurnerLogo.png"
+              className="centerImage"   
+              alt="Buy Natas"
+            />
+          <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
+            <br />
+            <div id="centerImage">
+            <img
+              src="/images/natas_demn_sm.png"
+              alt="Buy Natas"
+            />
+            </div>
+          </a>
+        </div>
+        <div id="dialog">
+          {/*         <img
+              src="/images/coollogo_com-28728132 (1).png"
+             alt="Buy Natas"
+            />.  */}
           <div id="content">
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
@@ -297,7 +317,6 @@ const App = () => {
               Beta Test - Not Public
             </p>
           </div>
-        </div>
           <ConnectButton
             Tezos={Tezos}
             setContract={setContract}
