@@ -288,15 +288,6 @@ const App = () => {
               className="centerImage"   
               alt="Buy Natas"
             />
-          <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
-            <br />
-            <div id="centerImage">
-            <img
-              src="/images/natas_demn_sm.png"
-              alt="Buy Natas"
-            />
-            </div>
-          </a>
         </div>
         <div id="dialog">
           {/*         <img
