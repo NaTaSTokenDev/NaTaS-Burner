@@ -1,5 +1,4 @@
-import React, { useState, useEffect, } from "react";
-import useFetch from "react-fetch-hook"
+import React, { useState, useEffect, } from "react";"
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -42,9 +41,9 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
 
 
- const demnBalance = fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
+ const demnBalance = () => {fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
   .then(response => response.json())
-  .then(data => console.log(data));
+  .then(data => console.log(data));};
     
     
     };
@@ -286,7 +285,7 @@ const App = () => {
                 Address Logged In: {userAddress} 
             </p>
              <p className="text-align-center">
-          //     DeMN Balance: {data}
+              DeMN Balance: {demnBalance}
             </p>
           </div>
           <DisconnectButton
