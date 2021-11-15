@@ -42,9 +42,9 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
 
 
- const demnBalance = (): {fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
+ const demnBalance = (): fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
   .then(response => response.json())
-  .then(data => console.log(data))};
+  .then(data => console.log(data));
     
     
     };
