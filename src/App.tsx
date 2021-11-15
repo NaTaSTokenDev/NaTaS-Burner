@@ -284,8 +284,7 @@ const App = () => {
       <div className="main-box">
         <div id="centerImage">
                   <img
-              src="/images/NatasBurnerLogo.png"
-              className="centerImage"   
+              src="/images/NatasBurnerLogo.png"  
               alt="Buy Natas"
             />
         </div>
@@ -301,6 +300,7 @@ const App = () => {
               <br />
               If you have not done so already, go to the&nbsp; 
               <a href="https://natastoken.xyz"> NaTaS Token Website</a>
+              <br />
               for more information
               <br />
               Happy Burning
