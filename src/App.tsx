@@ -6,7 +6,6 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
-import { BigNumber } from 'bignumber.js';
 
 enum BeaconConnection {
   NONE = "",
@@ -30,7 +29,6 @@ const App = () => {
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
-  // const contract = await Tezos.contract.at(contractAddress);
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
   const generateQrCode = (): { __html: string } => {
@@ -272,9 +270,7 @@ console.log(data);
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-               {/*       
-                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
-                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
+             Here
             </p>
           </div>
           <DisconnectButton
@@ -295,17 +291,20 @@ console.log(data);
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
       <div className="main-box">
-        <div className="title">
+        <div id="centerImage">
                   <img
               src="/images/NatasBurnerLogo.png"
               className="centerImage"   
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
+            <br />
+            <div id="centerImage">
             <img
               src="/images/natas_demn_sm.png"
               alt="Buy Natas"
             />
+            </div>
           </a>
         </div>
         <div id="dialog">
