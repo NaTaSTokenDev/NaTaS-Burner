@@ -2,7 +2,6 @@
   "name": "natas-burner",
   "version": "0.1",
   "private": true,
-  "homepage": "https://natasburner.netlify.app",
   "dependencies": {
     "@ledgerhq/hw-transport-u2f": "^5.22.0",
     "@taquito/beacon-wallet": "^9.2.0-stablelib.0",
@@ -27,8 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i",
-    "Axios": "$ npm install axios"
+    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,8 +44,4 @@
     ]
   }
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
 
