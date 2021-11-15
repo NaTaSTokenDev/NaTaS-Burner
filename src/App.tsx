@@ -282,11 +282,10 @@ const App = () => {
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
         <div id="centerImage">
-                  <img
-              src="/images/NatasBurnerLogo.png"
-              alt="Natas Burner Logo"
+                  <img src="/images/NatasBurnerLogo.png" alt="Natas Burner Logo"
             />
         </div>
+      <br />
           <div id="content">
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
