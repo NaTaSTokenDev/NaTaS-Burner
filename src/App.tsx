@@ -42,7 +42,7 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
 
 
- const demnBalance = (): fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
+ const demnBalance = fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
   .then(response => response.json())
   .then(data => console.log(data));
     
@@ -286,7 +286,7 @@ const App = () => {
                 Address Logged In: {userAddress} 
             </p>
              <p className="text-align-center">
-               DeMN Balance: {data}
+          //     DeMN Balance: {data}
             </p>
           </div>
           <DisconnectButton
@@ -307,19 +307,20 @@ const App = () => {
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
       <div className="main-box">
-        <div className="title">
+        <div id="centerImage">
              <img
               src="/images/NatasBurnerLogo.png"
               className="centerImage"   
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
-            <p className="text-align-center">
+            </br>
+            <div id="centerImage">
             <img
               src="/images/natas_demn_sm.png"
               alt="Buy Natas"
             />
-            </p>
+            </div>
           </a>
         </div>
         <div id="dialog">
