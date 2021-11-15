@@ -1,5 +1,4 @@
-import React, { useState, useEffect, } from "react";
-import useFetch from "react-fetch-hook"
+import React, { useState, useEffect} from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -7,6 +6,7 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
+import { BigNumber } from 'bignumber.js';
 
 enum BeaconConnection {
   NONE = "",
@@ -30,37 +30,24 @@ const App = () => {
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
+  // const contract = await Tezos.contract.at(contractAddress);
+  // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
- // const demnBalance = () => {
- //     return fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
- //      .then((response) => response.json())
- //      .then((data) => console.log(data));}
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
-
-  const demnBalance = useState<string>("test");  
- // const demnBalance = () => {return fetch("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0")
- // .then(response => response.json())
- // .then(data => console.log(data));};
-    
-    
     };
-  
-  
-  
- // "https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0";
+ // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
 
-
-
-  
- //  async function getData() {
-  //   const response = await fetch ("https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0");
- //    const data = await response.json();
-//     setdBalance(data);
- //  }
+fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+.then(data => {
+return data.json();
+})
+.then(post => {
+console.log(data);
+});
     
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -281,12 +268,13 @@ const App = () => {
 //                {contractAddress}
 //              </a>
 //            </p>  */}
-            
              <p className="text-align-center">
-                Address Logged In: {userAddress} 
+                Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-              DeMN Balance: {demnBalance}
+               {/*       
+                  Balance {(userBalance / 1000000).toLocaleString("en-US")} DeMN Tokens
+                  Balance {(demnBalance / 1000000).toLocaleString("en-US")} DeMN Tokens    */}
             </p>
           </div>
           <DisconnectButton
@@ -307,20 +295,17 @@ const App = () => {
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
       <div className="main-box">
-        <div id="centerImage">
-             <img
+        <div className="title">
+                  <img
               src="/images/NatasBurnerLogo.png"
               className="centerImage"   
               alt="Buy Natas"
             />
           <a href="https://quipuswap.com/swap?from=tez&to=KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe_0">
-            <br />
-            <div id="centerImage">
             <img
               src="/images/natas_demn_sm.png"
               alt="Buy Natas"
             />
-            </div>
           </a>
         </div>
         <div id="dialog">
