@@ -289,10 +289,6 @@ const App = () => {
             />
          </div>
         </div>
-          {/*         <img
-              src="/images/coollogo_com-28728132 (1).png"
-             alt="Buy Natas"
-            />.  */}
           <div id="content">
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
