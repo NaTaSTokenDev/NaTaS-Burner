@@ -282,10 +282,7 @@ const App = () => {
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
         <div id="centerImage">
-                  <img src="/images/NatasBurnerLogo.png" alt="Natas Burner Logo"
-            />
-        </div>
-      <br />
+               <img src="/images/NatasBurnerLogo.png" alt="Natas Burner Logo"/>
           <div id="content">
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
@@ -300,6 +297,7 @@ const App = () => {
               Beta Test - Not Public
             </p>
           </div>
+        </div>
           <ConnectButton
             Tezos={Tezos}
             setContract={setContract}
