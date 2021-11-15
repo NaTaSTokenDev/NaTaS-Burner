@@ -2,6 +2,7 @@
   "name": "natas-burner",
   "version": "0.1",
   "private": true,
+  "homepage": "https://natasburner.netlify.app",
   "dependencies": {
     "@ledgerhq/hw-transport-u2f": "^5.22.0",
     "@taquito/beacon-wallet": "^9.2.0-stablelib.0",
@@ -19,15 +20,15 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "typescript": "^4.1.4",
-    "react-fetch-hook": "^1.8.5"
+    "typescript": "^4.1.4"
   },
   "scripts": {
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i"
+    "update-taquito": "ncu -u --target newest --filter '/^@taquito.*$/' && npm i",
+    "Axios": "$ npm install axios"
   },
   "eslintConfig": {
     "extends": "react-app"
