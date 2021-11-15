@@ -289,7 +289,6 @@ const App = () => {
             />
          </div>
         </div>
-        <div id="dialog">
           {/*         <img
               src="/images/coollogo_com-28728132 (1).png"
              alt="Buy Natas"
