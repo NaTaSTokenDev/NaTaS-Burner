@@ -281,13 +281,11 @@ const App = () => {
     );
   } else if (!publicToken && !userAddress && !userBalance) {
     return (
-      <div className="main-box">
         <div id="centerImage">
                   <img
               src="/images/NatasBurnerLogo.png"
               alt="Natas Burner Logo"
             />
-         </div>
         </div>
           <div id="content">
             <p className="text-align-center">
