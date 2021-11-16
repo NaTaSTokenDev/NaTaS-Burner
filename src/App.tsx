@@ -282,7 +282,9 @@ const App = () => {
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
-          {bob}
+        </div>
+        <div id="body">
+           {bob}
         </div>
       </div>
     );
