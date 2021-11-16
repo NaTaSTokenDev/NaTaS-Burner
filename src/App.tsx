@@ -283,9 +283,6 @@ const App = () => {
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
         </div>
-        <div id="body">
-           {bob}
-        </div>
       </div>
     );
   } else if (!publicToken && !userAddress && !userBalance) {
