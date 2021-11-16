@@ -39,7 +39,7 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
     
- cont bob = fetch('http://example.com/movies.json')
+ const bob = fetch('http://example.com/movies.json')
   .then(response => response.json())
   .then(data => console.log(data));
   
