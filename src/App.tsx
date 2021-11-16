@@ -331,9 +331,6 @@ const App = () => {
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
-       <p>
-         {bob}
-        </p>
       </div>
     );
   } else {
