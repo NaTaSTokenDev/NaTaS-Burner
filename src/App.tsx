@@ -39,7 +39,7 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
     
- const bob = fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
+ const bob = fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
   .then(data => console.log(data));
   
@@ -282,6 +282,7 @@ const App = () => {
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
+          {bob}
         </div>
       </div>
     );
