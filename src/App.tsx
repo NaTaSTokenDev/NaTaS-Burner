@@ -267,7 +267,7 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-             Here {bob}
+             Here 
             </p>
           </div>
           <DisconnectButton
@@ -327,9 +327,13 @@ const App = () => {
             wallet={wallet}
           />
         </div>
+        
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
+       <p>
+         {bob}
+        </p>
       </div>
     );
   } else {
