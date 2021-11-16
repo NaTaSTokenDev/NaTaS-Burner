@@ -52,7 +52,7 @@ const App = () => {
               alt="Buy Natas"
             />
         <div id="dialog">
-          <header>{bob}Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
+          <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
           
           <div id="content">
             <p className="text-align-center">
@@ -267,7 +267,7 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-             Here 
+             Here {bob}
             </p>
           </div>
           <DisconnectButton
