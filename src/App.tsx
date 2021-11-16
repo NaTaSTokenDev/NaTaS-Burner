@@ -262,9 +262,9 @@ const App = () => {
             </p>
              <p className="text-align-center">
              Here 
- <fetch('http://example.com/movies.json')
+               {fetch('http://example.com/movies.json')
   .then(response => response.json())
-  .then(data => console.log(data));/>
+  .then(data => console.log(data));}
   
             </p>
           </div>
