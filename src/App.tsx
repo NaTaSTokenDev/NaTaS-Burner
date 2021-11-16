@@ -39,6 +39,15 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
     
+  class GetRequest extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            totalReactPackages: null
+        };
+    }
+  
  const bob = fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
   .then(data => console.log(data));
