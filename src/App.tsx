@@ -261,7 +261,11 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-             Here
+             Here 
+ fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+  
             </p>
           </div>
           <DisconnectButton
