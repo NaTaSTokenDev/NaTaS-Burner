@@ -39,7 +39,7 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
     
- const bob = fetch('http://example.com/movies.json')
+ const bob = fetch('https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0')
   .then(response => response.json())
   .then(data => console.log(data));
   
@@ -52,7 +52,8 @@ const App = () => {
               alt="Buy Natas"
             />
         <div id="dialog">
-          <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
+          <header>{bob}Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
+          
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
