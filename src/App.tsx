@@ -46,7 +46,7 @@ const App = () => {
             .then(data => this.setState({ totalReactPackages: data.total }));
     }
     
-    render() {
+    render(); {
         const { totalReactPackages } = this.state;
         return (
             <div className="card text-center m-3">
