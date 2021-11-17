@@ -39,14 +39,14 @@ const App = () => {
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
 
-  componentDidMount() {
+  componentDidMount(); {
         // Simple GET request using fetch
         fetch('https://api.npms.io/v2/search?q=react')
             .then(response => response.json())
             .then(data => this.setState({ totalReactPackages: data.total }));
     }
     
-    render() {
+    render(); {
         const { totalReactPackages } = this.state;
         return (
             <div className="card text-center m-3">
