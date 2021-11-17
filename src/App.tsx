@@ -38,8 +38,8 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
-const rad = (
-     componentDidMount() {
+
+  componentDidMount() {
         // Simple GET request using fetch
         fetch('https://api.npms.io/v2/search?q=react')
             .then(response => response.json())
@@ -57,13 +57,9 @@ const rad = (
             </div>
         );
     }
-}
-);
+};
     
- const bob = fetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then(response => response.json())
-  .then(data => console.log(data));
-  
+
   
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
