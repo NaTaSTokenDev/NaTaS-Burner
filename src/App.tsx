@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+mport React, { useState, useEffect, GetRequestHooks, GetRequestAsyncAwait, GetRequestErrorHandling, GetRequestSetHeaders} from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
-import { BigNumber } from 'bignumber.js';
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
@@ -32,7 +31,6 @@ const App = () => {
   const [activeTab, setActiveTab] = useState<string>("transfer");
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
-  const demnAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
