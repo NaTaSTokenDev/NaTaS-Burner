@@ -81,8 +81,6 @@ const ConnectButton = ({
       setLoadingNano(false);
     }
   };
-  
-
 
   useEffect(() => {
     (async () => {
