@@ -137,8 +137,8 @@ const ConnectButton = ({
 };
 
 
-  const contract = await Tezos.contract.at(demnAddress);
-  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
+  const contract = async () => { await Tezos.contract.at(demnAddress); }
+  const storage: MichelsonMap<string, BigNumber> = async () => { await contract.storage(); }
   const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
   const size: number = storage.size;
   const existsInMap: boolean = storage.has(key);
