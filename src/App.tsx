@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
+import { BigNumber } from 'bignumber.js';
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
@@ -31,11 +32,21 @@ const App = () => {
   const [activeTab, setActiveTab] = useState<string>("transfer");
   // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
+  const demnAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
+const contract = await Tezos.contract.at(demnAddress);
+const storage: MichelsonMap<string, BigNumber> = await contract.storage();
+const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
+const size: number = storage.size;
+const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+const existsInMap: boolean = storage.has(key);
+const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+const valueInTez: BigNumber = storage.get(key); // value as a big number
+const value: number = valueInTez.toNumber(); // returns 789000000
     };
 
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
