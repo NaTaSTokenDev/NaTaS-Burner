@@ -82,15 +82,7 @@ const ConnectButton = ({
     }
   };
   
-  const contract = await Tezos.contract.at(demnAddress);
-  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
-  const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
-  const size: number = storage.size;
-  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
-  const existsInMap: boolean = storage.has(key);
-  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
-  const valueInTez: BigNumber = storage.get(key); // value as a big number
-  const value: number = valueInTez.toNumber(); // returns 789000000
+
 
   useEffect(() => {
     (async () => {
@@ -144,4 +136,14 @@ const ConnectButton = ({
   );
 };
 
+
+  const contract = await Tezos.contract.at(demnAddress);
+  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
+  const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
+  const size: number = storage.size;
+  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+  const existsInMap: boolean = storage.has(key);
+  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+  const valueInTez: BigNumber = storage.get(key); // value as a big number
+  const value: number = valueInTez.toNumber(); // returns 789000000
 export default ConnectButton;
