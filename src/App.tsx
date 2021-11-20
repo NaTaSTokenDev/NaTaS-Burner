@@ -38,15 +38,15 @@ const App = () => {
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
-const contract = await Tezos.contract.at(demnAddress);
-const storage: MichelsonMap<string, BigNumber> = await contract.storage();
-const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
-const size: number = storage.size;
-const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
-const existsInMap: boolean = storage.has(key);
-const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
-const valueInTez: BigNumber = storage.get(key); // value as a big number
-const value: number = valueInTez.toNumber(); // returns 789000000
+  const contract = await Tezos.contract.at(demnAddress);
+  const storage: MichelsonMap<string, BigNumber> = await contract.storage();
+  const isMap: boolean = MichelsonMap.isMichelsonMap(storage);
+  const size: number = storage.size;
+  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+  const existsInMap: boolean = storage.has(key);
+  const key: string = 'tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx';
+  const valueInTez: BigNumber = storage.get(key); // value as a big number
+  const value: number = valueInTez.toNumber(); // returns 789000000
     };
 
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
