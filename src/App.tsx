@@ -38,24 +38,6 @@ const App = () => {
     return { __html: qr.createImgTag(4) };
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
-
-  componentDidMount(); {
-        // Simple GET request using fetch
-        fetch('https://api.npms.io/v2/search?q=react')
-            .then(response => response.json())
-            .then(data => this.setState({ totalReactPackages: data.total }));
-    }
-    
-    render(); {
-        const { totalReactPackages } = this.state;
-        return (
-            <div className="card text-center m-3">
-                <h5 className="card-header">Simple GET Request</h5>
-                <div className="card-body">
-                    Total react packages: {totalReactPackages}
-                </div>
-            </div>
-        );
     }
 };
     
