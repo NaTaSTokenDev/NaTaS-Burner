@@ -1,4 +1,4 @@
-import React, { useState, useEffect, GetRequestHooks, GetRequestAsyncAwait, GetRequestErrorHandling, GetRequestSetHeaders} from "react";
+import React, { useState, useEffect, GetRequestAsyncAwait, GetRequestErrorHandling, GetRequestSetHeaders} from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
