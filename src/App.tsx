@@ -6,6 +6,8 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
+import axios from "axios"
+
 
 enum BeaconConnection {
   NONE = "",
@@ -25,7 +27,6 @@ const App = () => {
   const [userAddress, setUserAddress] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0); 
-  const [storage2, setStorage2] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
@@ -36,9 +37,17 @@ const App = () => {
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };
+    const fetchData = () => {
+      return axios.get("https://randomuser.me/api/")
+            .then((response) => console.log(response.data));}
     };
  // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
     
+ const fetchData = () => {
+  return fetch("https://randomuser.me/api/")
+        .then((response) => response.json())
+        .then((data) => console.log(data));}
+
  const bob = fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then(response => response.json())
   .then(data => console.log(data));
@@ -267,7 +276,7 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-             Here 
+             Here
             </p>
           </div>
           <DisconnectButton
