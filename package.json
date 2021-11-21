@@ -1,6 +1,6 @@
 {
   "name": "natas-burner",
-  "version": "0.1",
+  "version": "0.1.0",
   "private": true,
   "homepage": "https://natasburner.netlify.app",
   "dependencies": {
