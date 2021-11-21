@@ -5,12 +5,9 @@
   "homepage": "https://natasburner.netlify.app",
   "dependencies": {
     "@ledgerhq/hw-transport-u2f": "^5.22.0",
-    "@taquito/taquito": "^10.1.2",
     "@taquito/beacon-wallet": "^9.2.0-stablelib.0",
     "@taquito/ledger-signer": "^9.2.0-stablelib.0",
-    "@taquito/michelson-encoder": "^10.1.2",
-    "@taquito/rpc": "^10.1.2",
-    "@taquito/signer": "^10.1.2",
+    "@taquito/taquito": "^9.2.0-stablelib.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
@@ -46,5 +43,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+    "main": 
+      [
+        "src/index.js"
+      ]
   }
 }
