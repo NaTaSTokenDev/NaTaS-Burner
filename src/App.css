@@ -9,7 +9,7 @@ body,
   font-size: 1rem;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Acme);
 
 #root {
   display: grid;
@@ -234,7 +234,7 @@ a:hover {
 
 body {
  background: #111;
- font-family: "Open Sans",  Impact;
+ font-family: "Acme",  Impact;
 }
 
 .area {
