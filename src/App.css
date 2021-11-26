@@ -1,6 +1,7 @@
-html,
+html
   { background-color: #000000;}
-body,
+
+
 #root {
   height: 100%;
   width: 100%;
@@ -43,10 +44,9 @@ h3 {
   color: #ffffff;
 }
 
-img {align: center}
-
 p {
   color: #ffffff;
+  text-align: center;
 }
 
 body {
@@ -83,11 +83,11 @@ font-size: 20px;
   border-radius: 3px;   
 }
 
-#content {}
+#content {
   display: flex; 
   flex-direction: column; 
   padding: 20px; 
-
+}
 
 #footer {
   display: flex;
