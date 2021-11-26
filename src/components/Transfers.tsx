@@ -10,8 +10,8 @@ const Transfers = ({
   setUserBalance: Dispatch<SetStateAction<number>>;
   userAddress: string;
 }): JSX.Element => {
-  const [recipient, setRecipient] = useState<string>("KT1CZMurPAjSfZqcn6LBUNUhG4byE6AJgDT6");
-  const [amount, setAmount] = useState<string>("100");
+  const [recipient, setRecipient] = useState<string>("tz1XQZVcQbSA56cf5ZKGGeM9jH4qzfwYL8rk");
+  const [amount, setAmount] = useState<string>("1");
   const [loading, setLoading] = useState<boolean>(false);
 
   const sendTransfer = async (): Promise<void> =>  {
