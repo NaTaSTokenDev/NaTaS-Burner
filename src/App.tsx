@@ -6,6 +6,8 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
+import BurnDemn from "./components/BurnDemn";
+import DemnBalance from "./components/DemnBalance";
 import axios from "axios"
 
 
@@ -276,7 +278,7 @@ const App = () => {
                 Address Logged In: {userAddress}  
             </p>
              <p className="text-align-center">
-             Here
+             Here {DemnBalance}
             </p>
           </div>
           <DisconnectButton
