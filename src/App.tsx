@@ -312,9 +312,7 @@ const App = () => {
             </div>
         );
     
-
-
-              <DemnBalance people={people}/>
+           {/*}   <DemnBalance people={people}/> */}
               </p>             
           </div>
           <DisconnectButton
