@@ -47,7 +47,6 @@ const App = () => {
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };};
-  
   const [people, setPeople] = useState<IState["people"]>([
       {
         name: "DeMN Token",

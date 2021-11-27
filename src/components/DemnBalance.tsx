@@ -1,14 +1,13 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
-
-
-  import { IState as Props } from "../App";
+import React, { useState, Dispatch, SetStateAction, useEffect } from "react";
+import axios from 'axios';
+import { IState as Props } from "../App";
 
   interface IProps {
       people: Props["people"]
   }
-  
+
+
   const DemnBalance: React.FC<IProps> = ({ people }) => {
-  
       const renderList = (): JSX.Element[] => {
           return people.map(person => {
               return (
@@ -22,9 +21,13 @@ import React, { useState, Dispatch, SetStateAction } from "react";
       return (
           <ul>
               {renderList()} 
+              
           </ul>
+
+          
       )
-  }
+      }
+    
   
 
 export default DemnBalance;
