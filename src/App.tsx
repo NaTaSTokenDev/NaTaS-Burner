@@ -25,14 +25,7 @@ export interface IState {
       name: string
       age: number
   }[]
-}
-
-interface Iitem {
-  item: {
-  avatar_url: string;
-  login: string;
-}
-}
+};
 
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
@@ -66,34 +59,6 @@ const App = () => {
       }
     ])
 
-    const apiUrl = "https://api.github.com/users";
-    
-    const [items, setItems] = React.useState([]);
-    
-      React.useEffect(() => {
-        async function fetchData() {
-          var data = await fetch(apiUrl).then(res => {
-            return res.json();
-          });
-          //console.log(data);
-          setItems(data);
-          console.log(data);
-        }
-        fetchData();
-      }, []);
-    
-      return (
-        <div>
-          {items.map(item => (
-            <div>
-              
-              <div>{item}</div>
-            </div>
-          ))}
-          ;
-        </div>
-      );
-      
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="centerImage">
@@ -308,7 +273,7 @@ const App = () => {
     
             <div>
                 <h3 className="p-3 text-center">React HTTP GET Requests with Fetch</h3>
-                <Getrequest />
+          
             </div>
         );
     
