@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -8,8 +8,9 @@ import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 import BurnDemn from "./components/BurnDemn";
 import DemnBalance from "./components/DemnBalance";
-import axios from "axios"
-
+import Getrequest from "./components/Getrequest"
+import axios from "axios";
+import "./style.css";
 
 enum BeaconConnection {
   NONE = "",
@@ -17,6 +18,20 @@ enum BeaconConnection {
   CONNECTED = "Channel connected",
   PERMISSION_REQUEST_SENT = "Permission request sent, waiting for response",
   PERMISSION_REQUEST_SUCCESS = "Wallet is connected"
+}
+
+export interface IState {
+  people: {
+      name: string
+      age: number
+  }[]
+}
+
+interface Iitem {
+  item: {
+  avatar_url: string;
+  login: string;
+}
 }
 
 const App = () => {
@@ -27,6 +42,7 @@ const App = () => {
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
+  const [demnBalance, setDemnBalance] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0); 
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
@@ -38,23 +54,46 @@ const App = () => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
-    return { __html: qr.createImgTag(4) };
-    const fetchData = () => {
-      return axios.get("https://randomuser.me/api/")
-            .then((response) => console.log(response.data));}
-    };
- // const currentDemnbalance = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0';
-    
- const fetchData = () => {
-  return fetch("https://randomuser.me/api/")
-        .then((response) => response.json())
-        .then((data) => console.log(data));}
+    return { __html: qr.createImgTag(4) };};
+  const [people, setPeople] = useState<IState["people"]>([
+      {
+        name: "DeMN Token",
+        age: 35,
+      },
+      {
+        name: "NaTaS",
+        age: 42,  
+      }
+    ])
 
- const bob = fetch('https://jsonplaceholder.typicode.com/posts/1')
-  .then(response => response.json())
-  .then(data => console.log(data));
-  
-  
+    const apiUrl = "https://api.github.com/users";
+    
+    const [items, setItems] = React.useState([]);
+    
+      React.useEffect(() => {
+        async function fetchData() {
+          var data = await fetch(apiUrl).then(res => {
+            return res.json();
+          });
+          //console.log(data);
+          setItems(data);
+          console.log(data);
+        }
+        fetchData();
+      }, []);
+    
+      return (
+        <div>
+          {items.map(item => (
+            <div>
+              
+              <div>{item}</div>
+            </div>
+          ))}
+          ;
+        </div>
+      );
+      
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="centerImage">
@@ -263,23 +302,18 @@ const App = () => {
                 />
               </div>
             )}
-   
-         {/*      <p className="text-align-center">
-//              <i className="far fa-file-code"></i>&nbsp;
-//              <a
-//                href={`https://better-call.dev/granadanet/${contractAddress}/operations`}
-//                target="_blank"
-//                rel="noopener noreferrer"
-//              >
-//                {contractAddress}
-//              </a>
-//            </p>  */}
-             <p className="text-align-center">
-                Address Logged In: {userAddress}  
-            </p>
-             <p className="text-align-center">
-             Here {DemnBalance}
-            </p>
+              <p>
+              Address Logged In: {userAddress} 
+              
+    
+            <div>
+                <h3 className="p-3 text-center">React HTTP GET Requests with Fetch</h3>
+                <Getrequest />
+            </div>
+        );
+    
+           {/*}   <DemnBalance people={people}/> */}
+              </p>             
           </div>
           <DisconnectButton
             wallet={wallet}
@@ -346,7 +380,7 @@ const App = () => {
     );
   } else {
     return <div>An error has occurred</div>;
-  }
-};
+  }}
 
-export default App;
+
+export default App
