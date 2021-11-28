@@ -24,10 +24,10 @@ export interface IState {
   people: {
       name: string
       age: number
-  }[]
-};
+    }[];
+  }
 
-const App = () => {
+  const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
   );
@@ -269,15 +269,10 @@ const App = () => {
             )}
               <p>
               Address Logged In: {userAddress} 
-              
-    
             <div>
-                <h3 className="p-3 text-center">React HTTP GET Requests with Fetch</h3>
-          
+                <p>DeMN Token Balance: </p>
+                <DemnBalance people={people}/>
             </div>
-        );
-    
-           {/*}   <DemnBalance people={people}/> */}
               </p>             
           </div>
           <DisconnectButton
