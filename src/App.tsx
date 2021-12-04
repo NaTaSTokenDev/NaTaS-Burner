@@ -13,7 +13,7 @@ import Getrequest from "./components/Getrequest"
 import axios from "axios";
 import "./style.css";
 import { JsxText } from "typescript";
-
+// Version from VC
 enum BeaconConnection {
   NONE = "",
   LISTENING = "Listening to P2P channel",
@@ -352,3 +352,4 @@ export interface FetchtheProps
 
 
 export default App
+
