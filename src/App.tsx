@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, JSXElementConstructor } from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -8,9 +8,11 @@ import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 import BurnDemn from "./components/BurnDemn";
 import DemnBalance from "./components/DemnBalance";
+import Mytest from "./components/DemnBalance";
 import Getrequest from "./components/Getrequest"
 import axios from "axios";
 import "./style.css";
+import { JsxText } from "typescript";
 
 enum BeaconConnection {
   NONE = "",
@@ -20,13 +22,11 @@ enum BeaconConnection {
   PERMISSION_REQUEST_SUCCESS = "Wallet is connected"
 }
 
-export interface IState {
-  people: {
-      name: string
-      age: number
-    }[];
-  }
-
+export interface FetchtheProps
+   { lookupaddress: object
+    lookupbalance: string } 
+  
+ 
   const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://mainnet.api.tez.ie")
@@ -35,7 +35,9 @@ export interface IState {
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
-  const [demnBalance, setDemnBalance] = useState<string>("");
+  const [lookupaddress, setLookupaddress] = useState<string>("");
+  const [lookupbalance, setLookupbalance] = useState<number>(0);
+  // const [demnBalance, setDemnBalance] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0); 
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
@@ -48,16 +50,17 @@ export interface IState {
     qr.addData(publicToken || "");
     qr.make();
     return { __html: qr.createImgTag(4) };};
-  const [people, setPeople] = useState<IState["people"]>([
-      {
-        name: "DeMN Token",
-        age: 35,
-      },
-      {
-        name: "NaTaS",
-        age: 42,  
-      }
-    ])
+    const [user2, setUser2] = useState([]);
+ // const [people, setPeople] = useState<IState["people"]>([
+   //   {
+    //    name: "DeMN Token",
+  //      age: 35,
+   //   },
+ //     {
+  //      name: "NaTaS",
+  //      age: 42,  
+ //     }
+  //  ])
 
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -268,10 +271,15 @@ export interface IState {
               </div>
             )}
               <p>
+               
+                   lookupaddress={lookupaddress}
+                   
               Address Logged In: {userAddress} 
+              Demn Token Balance: {lookupaddress}
             <div>
-                <p>DeMN Token Balance: </p>
-                <DemnBalance people={people}/>
+          
+               {/* <DemnBalance people={people}/>
+                <Mytest user2={user2}/> */}
             </div>
               </p>             
           </div>

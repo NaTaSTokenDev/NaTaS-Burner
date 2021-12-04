@@ -4,9 +4,9 @@ import App from "./App.tsx";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React>
     <App />
-  </React.StrictMode>,
+  </React>,
   document.getElementById("root")
 );
 
