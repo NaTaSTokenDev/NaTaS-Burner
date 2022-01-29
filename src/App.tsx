@@ -1,4 +1,4 @@
-import React, { useState, useEffect, JSXElementConstructor } from "react";
+import React, { useState } from "react";
 import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
@@ -6,14 +6,11 @@ import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
-import BurnDemn from "./components/BurnDemn";
+import BurnDemns from "./components/BurnDemns";
 import DemnBalance from "./components/DemnBalance";
-import Mytest from "./components/DemnBalance";
-import Getrequest from "./components/Getrequest"
-import axios from "axios";
+import PixelDemnBalance from "./components/PixelDeMN";
 import "./style.css";
-import { JsxText } from "typescript";
-// Version from VC
+
 enum BeaconConnection {
   NONE = "",
   LISTENING = "Listening to P2P channel",
@@ -21,57 +18,39 @@ enum BeaconConnection {
   PERMISSION_REQUEST_SENT = "Permission request sent, waiting for response",
   PERMISSION_REQUEST_SUCCESS = "Wallet is connected"
 }
-
-export interface FetchtheProps
-   { lookupaddress: object
-    lookupbalance: string } 
-  
- 
-  const App = () => {
+const App:React.FC = () => {  
   const [Tezos, setTezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://mainnet.api.tez.ie")
+    new TezosToolkit("https://hangzhounet.api.tez.ie")
   );
+  const [data, setData] = useState<any>(null);
+  const [loading, setLoading] = useState<any>(null);
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
-  const [lookupaddress, setLookupaddress] = useState<string>("");
-  const [lookupbalance, setLookupbalance] = useState<number>(0);
-  // const [demnBalance, setDemnBalance] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
-  const [storage, setStorage] = useState<number>(0); 
+  const [storage, setStorage] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
   // DeMN Contract Address
-  const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";  
+  const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
     qr.addData(publicToken || "");
     qr.make();
-    return { __html: qr.createImgTag(4) };};
-    const [user2, setUser2] = useState([]);
- // const [people, setPeople] = useState<IState["people"]>([
-   //   {
-    //    name: "DeMN Token",
-  //      age: 35,
-   //   },
- //     {
-  //      name: "NaTaS",
-  //      age: 42,  
- //     }
-  //  ])
+    return { __html: qr.createImgTag(4) };
+  };
 
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="centerImage">
-            <img
-              src="/images/NatasBurnerLogo.png"
-              alt="Buy Natas"
-            />
+        <img
+          src="/images/NatasBurnerLogo.png"
+          alt="Buy Natas"
+        />
         <div id="dialog">
-          <header>Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</header>
-          
+          <p className="myhead">Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</p>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -112,57 +91,57 @@ export interface FetchtheProps
         </div>
         <div id="centerImage">
           <img src="/images/NatasBurnerLogo.png"
-              alt="Natas and Demon Token Logo"
-             />
+            alt="Natas and Demon Token Logo"
+          />
         </div>
       </div>
     );
   } else if (userAddress && !isNaN(userBalance)) {
     return (
       <div className="main-box">
-                <img
-              src="/images/NatasBurnerLogo.png"
-              alt="Buy Natas"  
-                />
+        <img
+          src="/images/NatasBurnerLogo.png"
+          alt="Buy Natas"
+        />
         <div id="tabs">
-          <div
-            id="transfer"
+
+          <div id="transfer"
             className={activeTab === "transfer" ? "active" : ""}
             onClick={() => setActiveTab("transfer")}
           >
             Burn DeMN's
           </div>
-          <div
-            id="contract"
+
+          <div id="contract"
             className={activeTab === "contract" ? "active" : ""}
             onClick={() => setActiveTab("contract")}
           >
             See Ramaining Numbers
           </div>
         </div>
-       <div id="dialog">
+        <div id="dialog">
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h1 className="text-align-center">Burn 100 DeMN Tokens</h1>
+                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
                 <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
                 <h3 className="text-align-center">Numbers picked during this round are eliminated</h3>
                 <div className="area">Prize Pool: TBD</div>
-                <Transfers
+                <BurnDemns
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
-                  userAddress={userAddress}                
-               />
+                  userAddress={userAddress}
+                />
               </div>
             ) : (
-                <div>
+              <div>
                 <h3 className="text-align-center">
-                Red Numbers have been eliminated
+                  Red Numbers have been eliminated
                 </h3>
                 <div className="grid-container">
                   <div>1</div>
                   <div>2</div>
-                  <div>3</div>  
+                  <div>3</div>
                   <div>4</div>
                   <div>5</div>
                   <div>6</div>
@@ -182,7 +161,7 @@ export interface FetchtheProps
                   <div>20</div>
                   <div>21</div>
                   <div>22</div>
-                  <div>23</div>  
+                  <div>23</div>
                   <div>24</div>
                   <div>25</div>
                   <div>26</div>
@@ -202,7 +181,7 @@ export interface FetchtheProps
                   <div>40</div>
                   <div>41</div>
                   <div className="blink">42</div>
-                  <div>43</div>  
+                  <div>43</div>
                   <div>44</div>
                   <div>45</div>
                   <div>46</div>
@@ -212,7 +191,7 @@ export interface FetchtheProps
                   <div>50</div>
                   <div>51</div>
                   <div>52</div>
-                  <div>53</div>  
+                  <div>53</div>
                   <div>54</div>
                   <div>55</div>
                   <div>56</div>
@@ -222,7 +201,7 @@ export interface FetchtheProps
                   <div>60</div>
                   <div>61</div>
                   <div>62</div>
-                  <div>63</div>  
+                  <div>63</div>
                   <div>64</div>
                   <div>65</div>
                   <div>66</div>
@@ -232,7 +211,7 @@ export interface FetchtheProps
                   <div>70</div>
                   <div>71</div>
                   <div>72</div>
-                  <div>73</div>  
+                  <div>73</div>
                   <div>74</div>
                   <div>75</div>
                   <div>76</div>
@@ -242,7 +221,7 @@ export interface FetchtheProps
                   <div>80</div>
                   <div>81</div>
                   <div>82</div>
-                  <div>83</div>  
+                  <div>83</div>
                   <div>84</div>
                   <div>85</div>
                   <div>86</div>
@@ -252,7 +231,7 @@ export interface FetchtheProps
                   <div>90</div>
                   <div>91</div>
                   <div>92</div>
-                  <div>93</div>  
+                  <div>93</div>
                   <div>94</div>
                   <div>95</div>
                   <div>96</div>
@@ -261,29 +240,24 @@ export interface FetchtheProps
                   <div>99</div>
                   <div>100</div>
                 </div>
+                <p></p>
                 <UpdateContract
                   contract={contract}
                   setUserBalance={setUserBalance}
                   Tezos={Tezos}
                   userAddress={userAddress}
-                setStorage={setStorage}
+                  setStorage={setStorage}
                 />
+               
+                  DemnBalance={DemnBalance}
+                  PixelDemnBalance={PixelDemnBalance}
+                                  
               </div>
             )}
-              <p>
-               
-                   lookupaddress={lookupaddress}
-                   
-              Address Logged In: {userAddress} 
-              Demn Token Balance: {lookupaddress}
-            <div>
-          
-               {/* <DemnBalance people={people}/>
-                <Mytest user2={user2}/> */}
-            </div>
-              </p>             
-          </div>
-          <DisconnectButton
+            <p> DeMN Token Balance: <DemnBalance userAddress={userAddress} /> </p>
+           {/*  <p> PixelDemnBalance:  <PixelDemnBalance userAddress={userAddress} /> </p>  */}
+            <img src="https://cloudflare-ipfs.com/ipfs/QmSKbvo6MC2ab598Afnt93hYRc3NYJcKDQH87wsyNk3Hus" alt="display image" />
+            <DisconnectButton
             wallet={wallet}
             setPublicToken={setPublicToken}
             setUserAddress={setUserAddress}
@@ -291,7 +265,9 @@ export interface FetchtheProps
             setWallet={setWallet}
             setTezos={setTezos}
             setBeaconConnection={setBeaconConnection}
-            />
+          />
+            <p>Address Logged In: {userAddress}</p>
+          </div>    
         </div>
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
@@ -302,10 +278,10 @@ export interface FetchtheProps
     return (
       <div className="main-box">
         <div id="centerImage">
-                  <img
-              src="/images/NatasBurnerLogo.png"  
-              alt="Buy Natas"
-            />
+          <img
+            src="/images/NatasBurnerLogo.png"
+            alt="Buy Natas"
+          />
         </div>
         <div id="dialog">
           {/*         <img
@@ -314,10 +290,10 @@ export interface FetchtheProps
             />.  */}
           <div id="content">
             <p className="text-align-center">
-              Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the 
+              Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the
               NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
               <br />
-              If you have not done so already, go to the&nbsp; 
+              If you have not done so already, go to the&nbsp;
               <a href="https://natastoken.xyz"> NaTaS Token Website</a>
               <br />
               for more information
@@ -340,7 +316,7 @@ export interface FetchtheProps
             wallet={wallet}
           />
         </div>
-        
+
         <div id="footer">
           <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
         </div>
@@ -348,7 +324,8 @@ export interface FetchtheProps
     );
   } else {
     return <div>An error has occurred</div>;
-  }}
+  }
+}
 
 
 export default App

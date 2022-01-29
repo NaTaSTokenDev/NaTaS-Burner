@@ -1,72 +1,34 @@
 import React, { useState, Dispatch, SetStateAction, useEffect, PropsWithChildren } from "react";
-import axios from 'axios';
-import { FetchtheProps as Props } from "../App";
-import { JsxText } from "typescript";
-// import { IState2 as Props2 } from "../App";
+import useFetch from "react-fetch-hook";
 
- //interface IProps {
-   // lookupaddress: Props[]
-//   lookupbalance: Props[]
- // }
-
-
- type FetchtheProps = {
-  lookupaddress: Dispatch<SetStateAction<any>>;
- // lookupbalance: Dispatch<SetStateAction<number>>;
+interface Post {
+  key: string
+  value: number
 };
-  const Apiaddress = 'https://api.better-call.dev/v1/contract/mainnet/KT1GaEvbD4zA3pHs7mv3grpuqR1KGtjXAEDe/tokens/holders?token_id=0'
 
- // const DemnBalance: React.FC<IProps> = ({ people }) => {
- //     const renderList = (): JSX.Element[] => {
-  //        return people.map(person => {
-  //            return (
-   //               <p>
-  //                  <p>Balance:  {person.age} DeMN Tokens</p>
-   //               </p>
-  //            )
-  //        })
-  //    }
+interface DemnBalanceProps {userAddress: string};
 
-   //   return (
-   //     <ul>
-    //        {renderList()} 
-   //         
-   //     </ul>
-  //  )
-  //  }
-  
-
-      const Mytest = ({lookupaddress}:FetchtheProps): JSX.Element => {
-        const [users, setUsers] = useState([]);
-    
-        useEffect(() => {
-            fetchUsers();
-        }, []);
-    
-        const fetchUsers = async () => {
-            const res = await fetch(Apiaddress);
-            const data = await res.json();
-            try {
-                setUsers(data.results);
-            } catch (err) {
-                console.log(err);
-            }
-        };
-    
-        return (
-            <div className="">
-                        <p>
-                            yrdydy
-                        </p>
-                    ))
-            </div>
-        );
+const DemnBalance = ({userAddress}: DemnBalanceProps) => {
+  const url = `https://api.tzkt.io/v1/bigmaps/16845/keys?active=true&select=key,value`
+  const thisuser = userAddress
+  const [demnuseraddress, setdemnUseraddress] = useState<string>('')
+  const { data, error } = useFetch<Post[]>(url)
+  let i = 0 
+  if (error) return <p>There is an error.</p>
+  if (!data) return <span>Loading...</span>
+  for (i = 0; i < data.length; i++) {
+    if ( data[i].key == thisuser) {
+      var num = data[i].value / Math.pow(10, 8);
+      return <span>{num}</span>
     
     }
-      
+  }
   
+  return <section>
+  <h1> {demnuseraddress} You have no DeMN Tokens?</h1>
+ <button> demnuseraddress </button>
+</section>
+}
 
-     
+export default DemnBalance;
   
-
-export default Mytest;

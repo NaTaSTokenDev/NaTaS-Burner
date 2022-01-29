@@ -45,7 +45,7 @@ const ConnectButton = ({
     const contract = await Tezos.wallet.at(contractAddress);
     const storage: any = await contract.storage();
     setContract(contract);
-    setStorage(storage.toNumber());
+   // setStorage(storage.toNumber());
   };
 
   const connectWallet = async (): Promise<void> => {
