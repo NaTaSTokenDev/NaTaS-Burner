@@ -5,10 +5,10 @@ import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
-import Transfers from "./components/Transfers";
 import BurnDemns from "./components/BurnDemns";
 import DemnBalance from "./components/DemnBalance";
-import PixelDemnBalance from "./components/PixelDeMN";
+import NaTaSBalance from "./components/NaTaSBalance";
+import GetIPFS from "./components/GetIPFS";
 import "./style.css";
 
 enum BeaconConnection {
@@ -28,12 +28,13 @@ const App:React.FC = () => {
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
+  const [myuserAddress, setmyUserAddress] = useState<string>("");
+  const [pixeldemncontract, setPixeldemncontract] = useState<string>("KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
-  // DeMN Contract Address
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
@@ -41,7 +42,6 @@ const App:React.FC = () => {
     qr.make();
     return { __html: qr.createImgTag(4) };
   };
-
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
       <div className="centerImage">
@@ -109,29 +109,29 @@ const App:React.FC = () => {
             className={activeTab === "transfer" ? "active" : ""}
             onClick={() => setActiveTab("transfer")}
           >
-            Burn DeMN's
+            Staked PixelDeMNs
           </div>
 
           <div id="contract"
             className={activeTab === "contract" ? "active" : ""}
             onClick={() => setActiveTab("contract")}
           >
-            See Ramaining Numbers
+            Earnings
           </div>
         </div>
         <div id="dialog">
           <div id="content">
             {activeTab === "transfer" ? (
               <div id="transfers">
-                <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
+           {/*}     <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
                 <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
                 <h3 className="text-align-center">Numbers picked during this round are eliminated</h3>
-                <div className="area">Prize Pool: TBD</div>
+            <div className="area">Prize Pool: TBD</div> 
                 <BurnDemns
                   Tezos={Tezos}
                   setUserBalance={setUserBalance}
                   userAddress={userAddress}
-                />
+                />*/}
               </div>
             ) : (
               <div>
@@ -238,25 +238,23 @@ const App:React.FC = () => {
                   <div>97</div>
                   <div>98</div>
                   <div>99</div>
-                  <div>100</div>
+                  <div>100</div> 
                 </div>
                 <p></p>
-                <UpdateContract
+           {/*     <UpdateContract
                   contract={contract}
                   setUserBalance={setUserBalance}
                   Tezos={Tezos}
                   userAddress={userAddress}
                   setStorage={setStorage}
-                />
-               
-                  DemnBalance={DemnBalance}
-                  PixelDemnBalance={PixelDemnBalance}
-                                  
+           />    */}                     
               </div>
             )}
-            <p> DeMN Token Balance: <DemnBalance userAddress={userAddress} /> </p>
-           {/*  <p> PixelDemnBalance:  <PixelDemnBalance userAddress={userAddress} /> </p>  */}
-            <img src="https://cloudflare-ipfs.com/ipfs/QmSKbvo6MC2ab598Afnt93hYRc3NYJcKDQH87wsyNk3Hus" alt="display image" />
+             <p> DeMN Token Balance: <DemnBalance myuserAddress={userAddress} /> </p> 
+             <h2>Your Series III PixelDeMNs</h2>
+             <div><GetIPFS 
+                myuserAddress={userAddress} 
+                pixeldemncontract={pixeldemncontract}/> </div> 
             <DisconnectButton
             wallet={wallet}
             setPublicToken={setPublicToken}
@@ -284,10 +282,6 @@ const App:React.FC = () => {
           />
         </div>
         <div id="dialog">
-          {/*         <img
-              src="/images/coollogo_com-28728132 (1).png"
-             alt="Buy Natas"
-            />.  */}
           <div id="content">
             <p className="text-align-center">
               Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the

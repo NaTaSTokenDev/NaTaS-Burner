@@ -6,11 +6,11 @@ interface Post {
   value: number
 };
 
-interface DemnBalanceProps {userAddress: string};
+interface DemnBalanceProps {myuserAddress: string};
 
-const DemnBalance = ({userAddress}: DemnBalanceProps) => {
+const DemnBalance = ({myuserAddress}: DemnBalanceProps) => {
   const url = `https://api.tzkt.io/v1/bigmaps/16845/keys?active=true&select=key,value`
-  const thisuser = userAddress
+  const thisuser = myuserAddress
   const [demnuseraddress, setdemnUseraddress] = useState<string>('')
   const { data, error } = useFetch<Post[]>(url)
   let i = 0 
@@ -25,8 +25,7 @@ const DemnBalance = ({userAddress}: DemnBalanceProps) => {
   }
   
   return <section>
-  <h1> {demnuseraddress} You have no DeMN Tokens?</h1>
- <button> demnuseraddress </button>
+  <p> {demnuseraddress} You have no DeMN Tokens?</p>
 </section>
 }
 
