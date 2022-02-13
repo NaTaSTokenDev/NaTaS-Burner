@@ -30,9 +30,9 @@ const GetIPFS = ({myuserAddress, pixeldemncontract}: DemnBalanceProps) => {
       var len = ipfslink4.length
       if (len != 1){
           var ipfslink4 = ipfslink4.substring(61, 107);
+          console.log(ipfsimage4)
           var ipfsimage4 = `<img src = "https://ipfs.io/ipfs/${ipfslink2}" width="300" height="300">`
           return ( <div>
-            {ipfslink4}
             <div dangerouslySetInnerHTML={{__html: ipfsimage2}} />
          
         </div> )

@@ -9,7 +9,9 @@ import BurnDemns from "./components/BurnDemns";
 import DemnBalance from "./components/DemnBalance";
 import NaTaSBalance from "./components/NaTaSBalance";
 import GetIPFS from "./components/GetIPFS";
+import MyDeMNs from "./components/MyDeMNs";
 import "./style.css";
+import ModIPFS from "./components/ModIPFS";
 
 enum BeaconConnection {
   NONE = "",
@@ -22,14 +24,15 @@ const App:React.FC = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://hangzhounet.api.tez.ie")
   );
-  const [data, setData] = useState<any>(null);
+  
+  // const [aredata, setAredata] = useState([]);
   const [loading, setLoading] = useState<any>(null);
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
   const [myuserAddress, setmyUserAddress] = useState<string>("");
-  const [pixeldemncontract, setPixeldemncontract] = useState<string>("KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN");
+  const [pixeldemncontract, setPixeldemncontract] = useState<string>("KT1TprCuXTpxuEodgNxMCGR5sanh2jQY2Xpb");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
@@ -46,7 +49,7 @@ const App:React.FC = () => {
     return (
       <div className="centerImage">
         <img
-          src="/images/NatasBurnerLogo.png"
+          src="/images/pixeldemnfarm.png"
           alt="Buy Natas"
         />
         <div id="dialog">
@@ -90,7 +93,7 @@ const App:React.FC = () => {
           </div>
         </div>
         <div id="centerImage">
-          <img src="/images/NatasBurnerLogo.png"
+          <img src="/images/pixeldemnfarm.png"
             alt="Natas and Demon Token Logo"
           />
         </div>
@@ -100,7 +103,7 @@ const App:React.FC = () => {
     return (
       <div className="main-box">
         <img
-          src="/images/NatasBurnerLogo.png"
+          src="/images/pixeldemnfarm.png"
           alt="Buy Natas"
         />
         <div id="tabs">
@@ -136,110 +139,14 @@ const App:React.FC = () => {
             ) : (
               <div>
                 <h3 className="text-align-center">
-                  Red Numbers have been eliminated
+                  Total DeMN Tokens Earned<br/>
+                  53.55<br/>
+                  DeMN Tokens Earned This week<br/>
+                  53.55<br/>
+                  Current DeMN Token Multiplier<br/>
+                  x .05
                 </h3>
-                <div className="grid-container">
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div>5</div>
-                  <div>6</div>
-                  <div>7</div>
-                  <div>8</div>
-                  <div>9</div>
-                  <div>10</div>
-                  <div>11</div>
-                  <div>12</div>
-                  <div>13</div>
-                  <div>14</div>
-                  <div>15</div>
-                  <div>16</div>
-                  <div>17</div>
-                  <div>18</div>
-                  <div>19</div>
-                  <div>20</div>
-                  <div>21</div>
-                  <div>22</div>
-                  <div>23</div>
-                  <div>24</div>
-                  <div>25</div>
-                  <div>26</div>
-                  <div>27</div>
-                  <div>28</div>
-                  <div>29</div>
-                  <div>30</div>
-                  <div>31</div>
-                  <div>32</div>
-                  <div>33</div>
-                  <div>34</div>
-                  <div>35</div>
-                  <div>36</div>
-                  <div>37</div>
-                  <div>38</div>
-                  <div>39</div>
-                  <div>40</div>
-                  <div>41</div>
-                  <div className="blink">42</div>
-                  <div>43</div>
-                  <div>44</div>
-                  <div>45</div>
-                  <div>46</div>
-                  <div>47</div>
-                  <div>48</div>
-                  <div>49</div>
-                  <div>50</div>
-                  <div>51</div>
-                  <div>52</div>
-                  <div>53</div>
-                  <div>54</div>
-                  <div>55</div>
-                  <div>56</div>
-                  <div>57</div>
-                  <div>58</div>
-                  <div>59</div>
-                  <div>60</div>
-                  <div>61</div>
-                  <div>62</div>
-                  <div>63</div>
-                  <div>64</div>
-                  <div>65</div>
-                  <div>66</div>
-                  <div>67</div>
-                  <div>68</div>
-                  <div>69</div>
-                  <div>70</div>
-                  <div>71</div>
-                  <div>72</div>
-                  <div>73</div>
-                  <div>74</div>
-                  <div>75</div>
-                  <div>76</div>
-                  <div>77</div>
-                  <div>78</div>
-                  <div>79</div>
-                  <div>80</div>
-                  <div>81</div>
-                  <div>82</div>
-                  <div>83</div>
-                  <div>84</div>
-                  <div>85</div>
-                  <div>86</div>
-                  <div>87</div>
-                  <div>88</div>
-                  <div>89</div>
-                  <div>90</div>
-                  <div>91</div>
-                  <div>92</div>
-                  <div>93</div>
-                  <div>94</div>
-                  <div>95</div>
-                  <div>96</div>
-                  <div>97</div>
-                  <div>98</div>
-                  <div>99</div>
-                  <div>100</div> 
-                </div>
+              
                 <p></p>
            {/*     <UpdateContract
                   contract={contract}
@@ -252,7 +159,7 @@ const App:React.FC = () => {
             )}
              <p> DeMN Token Balance: <DemnBalance myuserAddress={userAddress} /> </p> 
              <h2>Your Series III PixelDeMNs</h2>
-             <div><GetIPFS 
+                <div><MyDeMNs 
                 myuserAddress={userAddress} 
                 pixeldemncontract={pixeldemncontract}/> </div> 
             <DisconnectButton
@@ -277,22 +184,21 @@ const App:React.FC = () => {
       <div className="main-box">
         <div id="centerImage">
           <img
-            src="/images/NatasBurnerLogo.png"
+            src="/images/pixeldemnfarm.png"
             alt="Buy Natas"
           />
         </div>
         <div id="dialog">
           <div id="content">
             <p className="text-align-center">
-              Burn 100 of your DeMN Tokens and you will have a 1 in 100 chance to win the
-              NaTaS Token Prize Pool. As numbers are eliminated your odds get better.
+              Earn DeMN Tokens with your PixelDeMNS
               <br />
               If you have not done so already, go to the&nbsp;
-              <a href="https://natastoken.xyz"> NaTaS Token Website</a>
+              <a href="https://pixeldemn.xyz"> PixelDeMN Objkt page </a>
               <br />
-              for more information
+              to get a PixelDeMN and Start Earning
               <br />
-              Happy Burning
+              Thanks
               <br />
               Beta Test - Not Public
             </p>
