@@ -4,14 +4,10 @@ import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
 import qrcode from "qrcode-generator";
-import UpdateContract from "./components/UpdateContract";
-import BurnDemns from "./components/BurnDemns";
 import DemnBalance from "./components/DemnBalance";
-import NaTaSBalance from "./components/NaTaSBalance";
-import GetIPFS from "./components/GetIPFS";
+import NatasBalance from "./components/NatasBalance";
 import MyDeMNs from "./components/MyDeMNs";
-import "./style.css";
-import ModIPFS from "./components/ModIPFS";
+import Demnsowned from "./components/Demnsowned";
 
 enum BeaconConnection {
   NONE = "",
@@ -26,12 +22,11 @@ const App:React.FC = () => {
   );
   
   // const [aredata, setAredata] = useState([]);
-  const [loading, setLoading] = useState<any>(null);
+  const [mydemnsowned, setmyDemnsowned] = useState<number>(0);
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
-  const [myuserAddress, setmyUserAddress] = useState<string>("");
   const [pixeldemncontract, setPixeldemncontract] = useState<string>("KT1TprCuXTpxuEodgNxMCGR5sanh2jQY2Xpb");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0);
@@ -49,11 +44,11 @@ const App:React.FC = () => {
     return (
       <div className="centerImage">
         <img
-          src="/images/pixeldemnfarm.png"
+          src="/images/NatasBurnerLogo.png"
           alt="Buy Natas"
         />
         <div id="dialog">
-          <p className="myhead">Burn 100 DeMN Tokens for a chance to win the NaTaS Pool</p>
+          <p className="myhead">pixeldemn.xyz</p>
           <div id="content">
             <p className="text-align-center">
               <i className="fas fa-broadcast-tower"></i>&nbsp; Connecting to
@@ -93,7 +88,7 @@ const App:React.FC = () => {
           </div>
         </div>
         <div id="centerImage">
-          <img src="/images/pixeldemnfarm.png"
+          <img src="/images/NatasBurnerLogo.png"
             alt="Natas and Demon Token Logo"
           />
         </div>
@@ -103,7 +98,7 @@ const App:React.FC = () => {
     return (
       <div className="main-box">
         <img
-          src="/images/pixeldemnfarm.png"
+          src="/images/NatasBurnerLogo.png"
           alt="Buy Natas"
         />
         <div id="tabs">
@@ -125,43 +120,53 @@ const App:React.FC = () => {
         <div id="dialog">
           <div id="content">
             {activeTab === "transfer" ? (
-              <div id="transfers">
-           {/*}     <h3 className="text-align-center">Burn 100 DeMN Tokens</h3>
-                <h3 className="text-align-center">Win The Prize Pool if your # is 42</h3>
-                <h3 className="text-align-center">Numbers picked during this round are eliminated</h3>
-            <div className="area">Prize Pool: TBD</div> 
-                <BurnDemns
-                  Tezos={Tezos}
-                  setUserBalance={setUserBalance}
-                  userAddress={userAddress}
-                />*/}
-              </div>
+              <div>
+                  <p> DeMN Token Balance:  <DemnBalance myuserAddress={userAddress} /> </p> 
+                  <p> NaTaS Token Balance: <NatasBalance myuserAddress={userAddress} /> </p> 
+                  <br/>
+                  <h2>Your Series I PixelDeMNs</h2>
+                  <div>
+               {/*}   <MyDeMNs 
+                      myuserAddress={userAddress} 
+                      pixeldemncontract='KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton'
+            setmyDemnsowned={mydemnsowned} /> */}
+                  </div> 
+                  <br/>
+                  <h2>Your Series II PixelDeMNs</h2>
+                      <MyDeMNs 
+                      myuserAddress={userAddress} 
+                      pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+                      mydemnsowned={mydemnsowned} />
+                  <br/>
+                  <h2>Your Series III PixelDeMNs</h2>
+                  <div>
+                  <MyDeMNs 
+                      myuserAddress={userAddress} 
+                      pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                      mydemnsowned={mydemnsowned} />
+                  </div> 
+              </div> 
             ) : (
               <div>
-                <h3 className="text-align-center">
-                  Total DeMN Tokens Earned<br/>
-                  53.55<br/>
-                  DeMN Tokens Earned This week<br/>
-                  53.55<br/>
-                  Current DeMN Token Multiplier<br/>
-                  x .05
-                </h3>
-              
-                <p></p>
-           {/*     <UpdateContract
-                  contract={contract}
-                  setUserBalance={setUserBalance}
-                  Tezos={Tezos}
-                  userAddress={userAddress}
-                  setStorage={setStorage}
-           />    */}                     
-              </div>
+                <h2>Total Staked PixelDeMNs</h2>
+                <div>
+                  <Demnsowned
+                      myuserAddress={userAddress} 
+                      pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+                      mydemnsowned={mydemnsowned} /></div>
+                <br/>
+                <h2>Total DeMN Tokens Earned</h2>
+                <h3>21</h3> 
+                <br/>
+                <h2>DeMN Tokens Earned This week</h2>
+                <h3>21</h3>
+                <br/>
+                <h2>Current DeMN Token Multiplier</h2>
+                <h3>X 0.00 (Coming Soon)</h3>
+                <br/>
+              </div>          
             )}
-             <p> DeMN Token Balance: <DemnBalance myuserAddress={userAddress} /> </p> 
-             <h2>Your Series III PixelDeMNs</h2>
-                <div><MyDeMNs 
-                myuserAddress={userAddress} 
-                pixeldemncontract={pixeldemncontract}/> </div> 
+          {/*  //   footer area <p></p>   */}
             <DisconnectButton
             wallet={wallet}
             setPublicToken={setPublicToken}
@@ -184,7 +189,7 @@ const App:React.FC = () => {
       <div className="main-box">
         <div id="centerImage">
           <img
-            src="/images/pixeldemnfarm.png"
+            src="/images/NatasBurnerLogo.png"
             alt="Buy Natas"
           />
         </div>

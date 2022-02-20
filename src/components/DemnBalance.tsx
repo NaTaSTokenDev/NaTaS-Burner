@@ -8,7 +8,8 @@ interface Post {
 
 interface DemnBalanceProps {myuserAddress: string};
 
-const DemnBalance = ({myuserAddress}: DemnBalanceProps) => {
+const DemnBalance = ({myuserAddress}: DemnBalanceProps) => 
+{
   const url = `https://api.tzkt.io/v1/bigmaps/16845/keys?active=true&select=key,value`
   const thisuser = myuserAddress
   const [demnuseraddress, setdemnUseraddress] = useState<string>('')
@@ -16,17 +17,15 @@ const DemnBalance = ({myuserAddress}: DemnBalanceProps) => {
   let i = 0 
   if (error) return <p>There is an error.</p>
   if (!data) return <span>Loading...</span>
-  for (i = 0; i < data.length; i++) {
-    if ( data[i].key == thisuser) {
+  for (i = 0; i < data.length; i++) 
+    {
+    if ( data[i].key == thisuser) 
+      {
       var num = data[i].value / Math.pow(10, 8);
       return <span>{num}</span>
-    
+      }
     }
-  }
-  
-  return <section>
-  <p> {demnuseraddress} You have no DeMN Tokens?</p>
-</section>
+  return <span>0</span>
 }
 
 export default DemnBalance;
