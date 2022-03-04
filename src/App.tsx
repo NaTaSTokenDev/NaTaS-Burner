@@ -1,13 +1,17 @@
+import { TezosToolkit } from "@taquito/taquito";
+import qrcode from "qrcode-generator";
 import React, { useState } from "react";
-import { TezosToolkit, MichelsonMap } from "@taquito/taquito";
 import "./App.css";
 import ConnectButton from "./components/ConnectWallet";
-import DisconnectButton from "./components/DisconnectWallet";
-import qrcode from "qrcode-generator";
 import DemnBalance from "./components/DemnBalance";
-import NatasBalance from "./components/NatasBalance";
-import MyDeMNs from "./components/MyDeMNs";
 import Demnsowned from "./components/Demnsowned";
+import DisconnectButton from "./components/DisconnectWallet";
+import MyDeMNs from "./components/MyDeMNs";
+import MyDeMNs_SIV from "./components/MyDeMNs_SIV";
+import MyDeMNs_SI from "./components/MyDeMNs_SI";
+import NatasBalance from "./components/NatasBalance";
+import Crunchy_DeMN from "./components/Crunchy_DeMN";
+import Crunchy_Natas from "./components/Crunchy_Natas";
 
 enum BeaconConnection {
   NONE = "",
@@ -18,7 +22,7 @@ enum BeaconConnection {
 }
 const App:React.FC = () => {  
   const [Tezos, setTezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://hangzhounet.api.tez.ie")
+    new TezosToolkit("https:/mainnet.api.tez.ie")
   );
   
   // const [aredata, setAredata] = useState([]);
@@ -27,7 +31,7 @@ const App:React.FC = () => {
   const [publicToken, setPublicToken] = useState<string | null>("");
   const [wallet, setWallet] = useState<any>(null);
   const [userAddress, setUserAddress] = useState<string>("");
-  const [pixeldemncontract, setPixeldemncontract] = useState<string>("KT1TprCuXTpxuEodgNxMCGR5sanh2jQY2Xpb");
+  const [pixeldemncontract, setPixeldemncontract] = useState<string>("");
   const [userBalance, setUserBalance] = useState<number>(0);
   const [storage, setStorage] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
@@ -121,50 +125,68 @@ const App:React.FC = () => {
           <div id="content">
             {activeTab === "transfer" ? (
               <div>
-                  <p> DeMN Token Balance:  <DemnBalance myuserAddress={userAddress} /> </p> 
-                  <p> NaTaS Token Balance: <NatasBalance myuserAddress={userAddress} /> </p> 
-                  <br/>
-                  <h2>Your Series I PixelDeMNs</h2>
-                  <div>
-               {/*}   <MyDeMNs 
-                      myuserAddress={userAddress} 
-                      pixeldemncontract='KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton'
-            setmyDemnsowned={mydemnsowned} /> */}
-                  </div> 
-                  <br/>
-                  <h2>Your Series II PixelDeMNs</h2>
-                      <MyDeMNs 
-                      myuserAddress={userAddress} 
-                      pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
-                      mydemnsowned={mydemnsowned} />
-                  <br/>
-                  <h2>Your Series III PixelDeMNs</h2>
-                  <div>
-                  <MyDeMNs 
-                      myuserAddress={userAddress} 
-                      pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
-                      mydemnsowned={mydemnsowned} />
-                  </div> 
+                <br />
+                <h2>Your Series I PixelDeMNs</h2>
+                <div className="wrapper">
+                <MyDeMNs_SI
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton'
+                  mydemnsowned={mydemnsowned} />
+                <br />
+                </div>
+                <h2>Your Series II PixelDeMNs</h2>
+                <div className="box">
+                <MyDeMNs
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+                  mydemnsowned={mydemnsowned} />
+                <br />
+                </div>
+                <h2>Your Series III PixelDeMNs</h2>
+                <MyDeMNs
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                  mydemnsowned={mydemnsowned} />
+                <br />
+                <h2>Your Series IV PixelDeMNs</h2>
+               {/* <MyDeMNs_SIV
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1KEa8z6vWXDJrVqtMrAeDVzsvxat3kHaCE'
+               mydemnsowned={mydemnsowned} /> */}
+                <br />
+                <p> DeMN Token Balance:  <DemnBalance myuserAddress={userAddress} /> </p>
+                <p> NaTaS Token Balance: <NatasBalance myuserAddress={userAddress} /> </p>
+                <p> Staked NaTaS LP on Crunchy.Network: Coming Soon</p>
+                <p> Staked DeMN LP on Crunchy.Network: Coming Soon</p>
+                <p> UnStaked NaTaS LP / Quipuswap: <Crunchy_Natas myuserAddress={userAddress} /></p>
+                <p> UnStaked DeMN LP / Quipuswap: <Crunchy_DeMN myuserAddress={userAddress} /> </p>  
+                <br />
               </div> 
             ) : (
-              <div>
-                <h2>Total Staked PixelDeMNs</h2>
                 <div>
+                  <br />
+                  <h2>Total Staked PixelDeMNs</h2>
                   <Demnsowned
-                      myuserAddress={userAddress} 
-                      pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
-                      mydemnsowned={mydemnsowned} /></div>
-                <br/>
-                <h2>Total DeMN Tokens Earned</h2>
-                <h3>21</h3> 
-                <br/>
-                <h2>DeMN Tokens Earned This week</h2>
-                <h3>21</h3>
-                <br/>
-                <h2>Current DeMN Token Multiplier</h2>
-                <h3>X 0.00 (Coming Soon)</h3>
-                <br/>
-              </div>          
+                    myuserAddress={userAddress}
+                    pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+                    mydemnsowned={mydemnsowned}
+                  />
+                  <br />
+                  <h2>Total DeMN Tokens Earned</h2>
+                  <h3>21</h3>
+                  <br />
+                  <h2>DeMN Tokens Earned This week</h2>
+                  <h3>21</h3>
+                  <br />
+                  <h2>Current DeMN Token Multiplier</h2>
+                  <h3>X 0.00 (Coming Soon)</h3>
+                  <br />
+                  <h2>PixelDeMNs Stats</h2>
+                  <h3>- 50 unique owners -</h3>
+                  <h3>- 178 Unique PixelDeMNs so far -</h3>
+                  <h3>- PixelDeMNs earn 21 DeMN Tokens per\wk -</h3>
+                  <br />
+                </div>          
             )}
           {/*  //   footer area <p></p>   */}
             <DisconnectButton
@@ -176,11 +198,14 @@ const App:React.FC = () => {
             setTezos={setTezos}
             setBeaconConnection={setBeaconConnection}
           />
-            <p>Address Logged In: {userAddress}</p>
+            <p>{userAddress}</p>
+            <br />
+            <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections" target="_blank">
+            <img src="/images/pixeldemnsonobjkt.png" height="150" />
+      </a>
           </div>    
         </div>
         <div id="footer">
-          <img src="/images/natas_demn_sm.png" alt="Natas and Demn Token Logo" />
         </div>
       </div>
     );
@@ -199,7 +224,7 @@ const App:React.FC = () => {
               Earn DeMN Tokens with your PixelDeMNS
               <br />
               If you have not done so already, go to the&nbsp;
-              <a href="https://pixeldemn.xyz"> PixelDeMN Objkt page </a>
+              <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections"> PixelDeMN Objkt page </a>
               <br />
               to get a PixelDeMN and Start Earning
               <br />
@@ -220,10 +245,15 @@ const App:React.FC = () => {
             setBeaconConnection={setBeaconConnection}
             wallet={wallet}
           />
+          <br />
+          <br />
+           <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections" target="_blank">
+            <img src="/images/pixeldemnsonobjkt.png" height="150" />
+          </a>
         </div>
 
         <div id="footer">
-          <img src="/images/natas_demn_sm.png" alt="Natas and Demon Token Logo" />
+         
         </div>
       </div>
     );

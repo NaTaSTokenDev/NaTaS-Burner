@@ -39,6 +39,7 @@ h2 {
   text-align: center;
   filter: drop-shadow(4px 3px 1px #000000);
   margin: 0px;
+  line-height: 0.5em;
 }
 
 h3 {
@@ -53,16 +54,31 @@ img {
 }
 
 p {
-  color: #ffffff;
+  color: #8c9496;
   text-align: center;
   margin: 0;
   padding:0;
-  font-size:20px;
+  font-size:18px;
+  line-height: 1.5em;
+}
+
+P1 {
+  color: #cfdadd;
+  text-align: center;
+  margin: 0;
+  padding:0;
+  font-size:18px;
   line-height: 1.5em;
 }
 
 body {
-  color: #ffffff;
+  color: #cfdadd;
+  background-color: #000000;
+  text-align: center;
+  margin: 0;
+  padding:0;
+  font-size:22px;
+  line-height: 1.5em;
 }
 
 header {
@@ -178,7 +194,7 @@ font-size: 20px;
   border-left: none;
   outline: none;
   margin-right: 5px;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-top: 0px;
   margin-bottom: 5px;
   text-align: right;
@@ -226,10 +242,11 @@ a:hover {
 
 #tabs div {
   width: 80%;
-  padding: 20px;
-  margin: 0px 10px;
+  padding: 10px;
+  margin: 0px 0px;
   border: solid 3px #990000;
   border-bottom: none;
+  font-size: 1.5rem;
   text-align: center;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -314,6 +331,33 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
+.wrapper {
+  max-width: 600px;
+  grid-gap: 10px;
+  display: grid;
+  background-color: #fff;
+	color: #444;
+  grid-template-columns: 2fr 2fr;
+}
+.box {
+  background-color: #999;
+	color: #fff;
+	border-radius: 5px;
+	padding: 20px;
+	font-size: 150%;
+}
+
+
+.box:last-child:nth-last-child(odd) {
+  background: tomato;
+  grid-column: auto / span 2;
+}
+
+.box:first-child:nth-last-child(even),
+.box:first-child:nth-last-child(even) ~ .box {
+  background: green;
+  grid-column: auto / span 1;
+}
 
 /* Firefox */
 input[type="number"] {
