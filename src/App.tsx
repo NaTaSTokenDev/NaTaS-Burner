@@ -12,6 +12,8 @@ import MyDeMNs_SI from "./components/MyDeMNs_SI";
 import NatasBalance from "./components/NatasBalance";
 import Crunchy_DeMN from "./components/Crunchy_DeMN";
 import Crunchy_Natas from "./components/Crunchy_Natas";
+import SendDeMN from "./components/SendDeMN";
+import SendNFT from "./components/SendDeMN";
 
 enum BeaconConnection {
   NONE = "",
@@ -118,7 +120,7 @@ const App:React.FC = () => {
             className={activeTab === "contract" ? "active" : ""}
             onClick={() => setActiveTab("contract")}
           >
-            Earnings
+            NFTs for DeMNs
           </div>
         </div>
         <div id="dialog">
@@ -127,32 +129,38 @@ const App:React.FC = () => {
               <div>
                 <br />
                 <h2>Your Series I PixelDeMNs</h2>
-                <div className="wrapper">
+                <div>
                 <MyDeMNs_SI
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton'
-                  mydemnsowned={mydemnsowned} />
+                  mydemnsowned={mydemnsowned}
+                  setmyDemnsowned={setmyDemnsowned} />
                 <br />
                 </div>
                 <h2>Your Series II PixelDeMNs</h2>
-                <div className="box">
+                <div>
                 <MyDeMNs
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
-                  mydemnsowned={mydemnsowned} />
-                <br />
+                  mydemnsowned={mydemnsowned}
+                  setmyDemnsowned={setmyDemnsowned}
+                 />
+                  <br />
                 </div>
                 <h2>Your Series III PixelDeMNs</h2>
                 <MyDeMNs
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
-                  mydemnsowned={mydemnsowned} />
+                  mydemnsowned={mydemnsowned}
+                  setmyDemnsowned={setmyDemnsowned}
+                   />
                 <br />
                 <h2>Your Series IV PixelDeMNs</h2>
-               {/* <MyDeMNs_SIV
+               <MyDeMNs_SIV
                   myuserAddress={userAddress}
-                  pixeldemncontract='KT1KEa8z6vWXDJrVqtMrAeDVzsvxat3kHaCE'
-               mydemnsowned={mydemnsowned} /> */}
+                  pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+               mydemnsowned={mydemnsowned}  
+               setmyDemnsowned={setmyDemnsowned} /> 
                 <br />
                 <p> DeMN Token Balance:  <DemnBalance myuserAddress={userAddress} /> </p>
                 <p> NaTaS Token Balance: <NatasBalance myuserAddress={userAddress} /> </p>
@@ -161,22 +169,20 @@ const App:React.FC = () => {
                 <p> UnStaked NaTaS LP / Quipuswap: <Crunchy_Natas myuserAddress={userAddress} /></p>
                 <p> UnStaked DeMN LP / Quipuswap: <Crunchy_DeMN myuserAddress={userAddress} /> </p>  
                 <br />
-              </div> 
-            ) : (
-                <div>
-                  <br />
+                <br />
                   <h2>Total Staked PixelDeMNs</h2>
-                  <Demnsowned
+                  <p>{mydemnsowned}</p>
+                  {/*<Demnsowned
                     myuserAddress={userAddress}
                     pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
-                    mydemnsowned={mydemnsowned}
-                  />
+                  mydemnsowned={mydemnsowned}
+                  /> */}
                   <br />
                   <h2>Total DeMN Tokens Earned</h2>
-                  <h3>21</h3>
+                  <h3>(Coming Soon)</h3>
                   <br />
                   <h2>DeMN Tokens Earned This week</h2>
-                  <h3>21</h3>
+                  <h3>(Coming Soon)</h3>
                   <br />
                   <h2>Current DeMN Token Multiplier</h2>
                   <h3>X 0.00 (Coming Soon)</h3>
@@ -186,9 +192,31 @@ const App:React.FC = () => {
                   <h3>- 178 Unique PixelDeMNs so far -</h3>
                   <h3>- PixelDeMNs earn 21 DeMN Tokens per\wk -</h3>
                   <br />
+              </div> 
+            ) : (
+                <div>
+                  <h2>Exclusive NFTs</h2> 
+                  <br />
+                  <h2>Buy with DeMN Tokens</h2> 
+                  <br />
+                  <img
+          src="/images/mask.jpg" width="200" height="200"
+          alt="Default PixelDeMN Image Placetaker"
+        />
+        <div id="transfers">
+                <h3 className="text-align-center">Burn some DeMNs</h3>
+                <p>Receive a DeMN Horde NFT for 666 DeMN Tokens</p>
+                <p>333 of you DeMN Tokens will be Burned</p>
+                <p>Only PixelDeMN NFTs earn DeMN Token Drops</p>
+                <p>Series V PixelDeMNs will be avalible here first!</p>
+                <SendDeMN
+                  Tezos={Tezos}
+                  setUserBalance={setUserBalance}
+                  userAddress={userAddress}
+                />
+              </div>
                 </div>          
             )}
-          {/*  //   footer area <p></p>   */}
             <DisconnectButton
             wallet={wallet}
             setPublicToken={setPublicToken}
@@ -206,6 +234,7 @@ const App:React.FC = () => {
           </div>    
         </div>
         <div id="footer">
+        <a href="https://natastoken.xyz"> NaTaSToken.xyz </a>
         </div>
       </div>
     );

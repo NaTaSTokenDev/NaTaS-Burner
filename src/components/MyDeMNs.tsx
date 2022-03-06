@@ -8,32 +8,34 @@ interface IDemnBalanceProps {
                 myuserAddress: string,
                 pixeldemncontract: string,
                 mydemnsowned: number
+                setmyDemnsowned: Dispatch<SetStateAction<number>>;
               };
               
 
-function MyDeMNs ({myuserAddress, pixeldemncontract, mydemnsowned}: IDemnBalanceProps) 
+function MyDeMNs ({myuserAddress, pixeldemncontract, mydemnsowned, setmyDemnsowned}: IDemnBalanceProps) 
   {
   var url = `https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${myuserAddress}&select=token.metadata.image`
-  var argh = ''
   let i = 0
   let bob = ""
   var ipfsimage = ''
   const { data, error } = useFetch<IPost[]>(url);
   if (error) return <p>Network connection?</p>
   if (!data) return <span>Loading...</span>
-  mydemnsowned = (data.length) + mydemnsowned
-  console.log(mydemnsowned)
+  setmyDemnsowned(data.length + mydemnsowned)
   for (i = 0; i < data.length; i++) 
     {
     var ipfslink = JSON.stringify(data[i])
     var ipfslink2 = ipfslink.toString(); 
     var ipfslink2 = ipfslink2.substring(7);
-    var ipfsimage = `<div><img src = "https://ipfs.io/ipfs/${ipfslink2}" width="200" height="200"></div>`;
+    var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2}" width="150" height="150">`;
      
     bob = ipfsimage + " " + bob
     }
+
+
+
       return (
-        <div className="box">
+        <div>
           <div dangerouslySetInnerHTML={{__html: bob}} />
         </div> 
              ) 

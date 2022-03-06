@@ -20,14 +20,12 @@ function Demnsowned ({myuserAddress, pixeldemncontract, mydemnsowned}: IDemnBala
   if (error) return <p>There is an error.</p>
   if (!data) return <span>Loading...</span>
   mydemnsowned = (data.length)
-  console.log(mydemnsowned)
   for (i = 0; i < data.length; i++) 
     {
     var ipfslink = JSON.stringify(data[i])
     var ipfslink2 = ipfslink.toString(); 
     var ipfslink2 = ipfslink2.substring(7);
     var ipfsimage = `<div><img src = "https://ipfs.io/ipfs/${ipfslink2}" width="200" height="200"></div>`;
-    console.log(ipfsimage); 
     bob = ipfsimage + " " + bob
     }
       return (

@@ -1,34 +1,30 @@
 import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
 import useFetch from "react-fetch-hook";
 
-
-//interface IPost {data: number};
-
-interface IPost2 {data: number};
+interface IPost {data: string};
 
 interface IDemnBalanceProps {
                 myuserAddress: string,
                 pixeldemncontract: string,
                 mydemnsowned: number
-              };              
-
-function MyDeMNs_SIV ({myuserAddress, pixeldemncontract, mydemnsowned}: IDemnBalanceProps) 
+                setmyDemnsowned: Dispatch<SetStateAction<number>>;
+              };
+              
+function MyDeMNs_SIV ({myuserAddress, pixeldemncontract, mydemnsowned, setmyDemnsowned}: IDemnBalanceProps) 
   {
-  var url = `https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&token.metadata.symbol=GENTK&&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.https://staging.api.tzkt.io/v1/tokens/balances?account=tz1Pk7dgfsqsFnHyGzfkdyuADaYU4atYEd7C&token.metadata.symbol=GENTK&&token.metadata.tags.[*]=PixelDeMNs&select=token.id`
+  var url = `https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri`
   let i = 0
   let bob = ""
   var ipfsimage = ''
-  const { data, error } = useFetch<IPost2[]>(url);
+  const { data, error } = useFetch<IPost[]>(url);
   if (error) return <p>Network connection?</p>
   if (!data) return <span>Loading...</span>
-  mydemnsowned = (data.length) + mydemnsowned
   for (i = 0; i < data.length; i++) 
     {
     var ipfslink = JSON.stringify(data[i])
-    if (ipfslink = '2226028') 
-    <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections" target="_blank">
-    <img src="/images/pixeldemnsonobjkt.png" height="150" />
-</a>
+    var ipfslink2 = ipfslink.toString(); 
+    var ipfslink2 = ipfslink2.substring(7);
+    var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2} width="150" height="150"/>`;
     bob = ipfsimage + " " + bob
     }
       return (
@@ -36,6 +32,9 @@ function MyDeMNs_SIV ({myuserAddress, pixeldemncontract, mydemnsowned}: IDemnBal
           <div dangerouslySetInnerHTML={{__html: bob}} />
         </div> 
              ) 
+
+
+             
       }  
 
 export default MyDeMNs_SIV;
