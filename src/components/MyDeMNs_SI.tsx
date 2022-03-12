@@ -25,8 +25,6 @@ const MyDeMNs_SI = ({
   const { data, error } = useFetch<IPost[]>(url);
   if (error) return <p>Network connection?</p>;
   if (!data) return <span>Loading...</span>;
-  //const rad = setmyDemnsowned(data.length);
-  console.log(data.length);
   for (i = 0; i < data.length; i++) {
     var ipfslink = JSON.stringify(data[i]);
     var ipfslink2 = ipfslink.toString();
