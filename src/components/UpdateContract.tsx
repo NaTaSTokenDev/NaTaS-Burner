@@ -1,5 +1,5 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
 import { TezosToolkit, WalletContract } from "@taquito/taquito";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 interface UpdateContractProps {
   contract: WalletContract | any;
@@ -9,7 +9,13 @@ interface UpdateContractProps {
   setStorage: Dispatch<SetStateAction<number>>;
 }
 
-const UpdateContract = ({ contract, setUserBalance, Tezos, userAddress, setStorage }: UpdateContractProps) => {
+const UpdateContract = ({
+  contract,
+  setUserBalance,
+  Tezos,
+  userAddress,
+  setStorage,
+}: UpdateContractProps) => {
   const [loadingIncrement, setLoadingIncrement] = useState<boolean>(false);
   const [loadingDecrement, setLoadingDecrement] = useState<boolean>(false);
 
@@ -46,7 +52,11 @@ const UpdateContract = ({ contract, setUserBalance, Tezos, userAddress, setStora
   if (!contract && !userAddress) return <div>&nbsp;</div>;
   return (
     <div className="buttons">
-      <button className="button" disabled={loadingIncrement} onClick={increment}>
+      <button
+        className="button"
+        disabled={loadingIncrement}
+        onClick={increment}
+      >
         {loadingIncrement ? (
           <span>
             <i className="fas fa-spinner fa-spin"></i>&nbsp; Please wait

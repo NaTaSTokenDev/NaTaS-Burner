@@ -1,13 +1,13 @@
-import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
-import { TezosToolkit } from "@taquito/taquito";
-import { BeaconWallet } from "@taquito/beacon-wallet";
 import {
-  NetworkType,
   BeaconEvent,
-  defaultEventCallbacks
+  defaultEventCallbacks,
+  NetworkType,
 } from "@airgap/beacon-sdk";
 import TransportU2F from "@ledgerhq/hw-transport-u2f";
+import { BeaconWallet } from "@taquito/beacon-wallet";
 import { LedgerSigner } from "@taquito/ledger-signer";
+import { TezosToolkit } from "@taquito/taquito";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type ButtonProps = {
   Tezos: TezosToolkit;
@@ -32,7 +32,7 @@ const ConnectButton = ({
   contractAddress,
   setBeaconConnection,
   setPublicToken,
-  wallet
+  wallet,
 }: ButtonProps): JSX.Element => {
   const [loadingNano, setLoadingNano] = useState<boolean>(false);
 
@@ -45,7 +45,7 @@ const ConnectButton = ({
     const contract = await Tezos.wallet.at(contractAddress);
     const storage: any = await contract.storage();
     setContract(contract);
-   // setStorage(storage.toNumber());
+    // setStorage(storage.toNumber());
   };
 
   const connectWallet = async (): Promise<void> => {
@@ -53,8 +53,8 @@ const ConnectButton = ({
       await wallet.requestPermissions({
         network: {
           type: NetworkType.MAINNET,
-          rpcUrl: "https://mainnet.api.tez.ie"
-        }
+          rpcUrl: "https://mainnet.api.tez.ie",
+        },
       });
       // gets user's address
       const userAddress = await wallet.getPKH();
@@ -92,12 +92,12 @@ const ConnectButton = ({
         eventHandlers: {
           // To keep the pairing alert, we have to add the following default event handlers back
           [BeaconEvent.PAIR_INIT]: {
-            handler: defaultEventCallbacks.PAIR_INIT
+            handler: defaultEventCallbacks.PAIR_INIT,
           },
           [BeaconEvent.PAIR_SUCCESS]: {
-            handler: data => setPublicToken(data.publicKey)
-          }
-        }
+            handler: (data) => setPublicToken(data.publicKey),
+          },
+        },
       });
       Tezos.setWalletProvider(wallet);
       setWallet(wallet);

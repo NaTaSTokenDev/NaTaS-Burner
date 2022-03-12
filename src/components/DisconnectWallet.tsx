@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction } from "react";
 import { BeaconWallet } from "@taquito/beacon-wallet";
 import { TezosToolkit } from "@taquito/taquito";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface ButtonProps {
   wallet: BeaconWallet | null;
@@ -19,7 +19,7 @@ const DisconnectButton = ({
   setUserBalance,
   setWallet,
   setTezos,
-  setBeaconConnection
+  setBeaconConnection,
 }: ButtonProps): JSX.Element => {
   const disconnectWallet = async (): Promise<void> => {
     //window.localStorage.clear();
