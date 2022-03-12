@@ -1,5 +1,5 @@
-import React, { useState, Dispatch, SetStateAction } from "react";
 import { TezosToolkit } from "@taquito/taquito";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 const SendDeMN = ({
   Tezos,
