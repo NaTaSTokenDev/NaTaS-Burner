@@ -9,7 +9,7 @@ export function getContracts(addresses: string[]) {
 export function getContract(address: string) {
   return axios
     .get<IPost[]>(
-      `https://staging.api.tzkt.io/v1/tokens/balances?account=${address}&token.metadata.symbol=GENTK&token.metadata.tags.[*]=PixelDeMNs&select=token.id`
+      `https://staging.api.tzkt.io/v1/tokens/balances?account=${address}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri`
     )
     .then((r) => r.data);
 }

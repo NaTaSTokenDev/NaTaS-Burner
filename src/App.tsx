@@ -9,9 +9,15 @@ import DisconnectButton from "./components/DisconnectWallet";
 import MyNewBalance from "./components/MyNewBalance";
 import MyNewDeMNs from "./components/MyNewDeMNs";
 import SendDeMN from "./components/SendDeMN";
-import { SERIES_CONTRACT_ADDRESSES } from "./config/const";
+import { SERIES_API_LINK } from "./config/const";
 import { getDemnBalance, getNatasBalance } from "./services/balance";
+import { getPixelDeMN_SI, getPixelDeMN_SII } from "./services/pixeldemnapi";
 import { getContracts } from "./services/contract";
+import MyDeMNs_SII from "./components/MyDeMNs_SII";
+import MyDeMNs_SIII from "./components/MyDeMNs_SIII";
+import MyDeMNs_SIV from "./components/MyDeMNs_SIV";
+import MyDeMNs_SI from "./components/MyDeMNs_SI";
+import MyDeMNs from "./components/MyDeMNs";
 
 const App: React.FC = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
@@ -26,7 +32,7 @@ const App: React.FC = () => {
   const [storage, setStorage] = useState<number>(0);
   const [copiedPublicToken, setCopiedPublicToken] = useState<boolean>(false);
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<string>("transfer");
+  const [activeTab, setActiveTab] = useState<string>("infotab");
   const contractAddress: string = "KT1GBgCd5dk7v4TSzWvtk1X64TxMyG4r7eRX";
   const [totalDeMNTokensEarned, setTotalDeMNTokensEarned] = useState(0);
   const [deMNTokensEarnedBySeries, setDeMNTokensEarnedBySeries] = useState<
@@ -34,6 +40,8 @@ const App: React.FC = () => {
   >([]);
   const [natasBalance, setNatasBalance] = useState(0);
   const [demnBalance, setDemnBalance] = useState(0);
+  const [pixelDemn_SI, setPixelDeMN_SI] = useState<string  | number>("");
+  const [pixelDemn_SII, setPixelDeMN_SII] = useState<string | number>("");
 
   const generateQrCode = (): { __html: string } => {
     const qr = qrcode(0, "L");
@@ -43,7 +51,7 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    getContracts(SERIES_CONTRACT_ADDRESSES).then((values) => {
+    getContracts(SERIES_API_LINK).then((values) => {
       const _deMNTokensEarnedBySeries = values.map((value) => value.length);
       const _totalTokensEarnedBySeries = _deMNTokensEarnedBySeries.reduce(
         (total, earnedInSeries) => (total += earnedInSeries),
@@ -60,6 +68,14 @@ const App: React.FC = () => {
     }
     getNatasBalance(userAddress).then((balance) => setNatasBalance(balance));
     getDemnBalance(userAddress).then((balance) => setDemnBalance(balance));
+  }, [userAddress]);
+
+  useEffect(() => {
+    if (!userAddress) {
+      return;
+    }
+    getPixelDeMN_SI(userAddress).then((pixeldemnbalance) => setPixelDeMN_SI(pixeldemnbalance));
+    getPixelDeMN_SII(userAddress).then((pixeldemnbalance) => setPixelDeMN_SII(pixeldemnbalance));
   }, [userAddress]);
 
   if (publicToken && (!userAddress || isNaN(userBalance))) {
@@ -120,9 +136,9 @@ const App: React.FC = () => {
         <img src="/images/NatasBurnerLogo.png" alt="Buy Natas" />
         <div id="tabs">
           <div
-            id="transfer"
-            className={activeTab === "transfer" ? "active" : ""}
-            onClick={() => setActiveTab("transfer")}
+            id="infotab"
+            className={activeTab === "infotab" ? "active" : ""}
+            onClick={() => setActiveTab("infotab")}
           >
             Staked PixelDeMNs
           </div>
@@ -137,8 +153,32 @@ const App: React.FC = () => {
         </div>
         <div id="dialog">
           <div id="content">
-            {activeTab === "transfer" ? (
+            {activeTab === "infotab" ? (
               <div>
+              <div>
+                <br />
+                <h2>Your Series I PixelDeMNs</h2>
+                <div>
+                <MyDeMNs_SI
+                  myuserAddress={userAddress}
+                />
+                <br />
+                </div>
+                <h2>Your Series II PixelDeMNs</h2>
+                <div>
+                <MyDeMNs_SII
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
+                 />
+                  <br />
+                </div>
+                <h2>Your Series III PixelDeMNs</h2>
+                <MyDeMNs_SIII
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                   />
+            
+ </div>
                 {/* Earn tokens by series */}
                 {deMNTokensEarnedBySeries.map((tokensEarned, index) => (
                   <MyNewDeMNs
@@ -152,37 +192,32 @@ const App: React.FC = () => {
                 <MyNewBalance balance={demnBalance} name="DeMN" />
                 <MyNewBalance balance={natasBalance} name="NaTas" />
 
-                <p> Staked NaTaS LP on Crunchy.Network: Coming Soon</p>
-                <p> Staked DeMN LP on Crunchy.Network: Coming Soon</p>
-                <p>
+                <h2>
                   {" "}
-                  UnStaked NaTaS LP / Quipuswap:{" "}
+                  UnStaked NaTaS LP / Quipuswap{" "}
+                </h2> 
+                <h3>
                   <Crunchy_Natas myuserAddress={userAddress} />
-                </p>
-                <p>
+                </h3>
+                <h2>
                   {" "}
-                  UnStaked DeMN LP / Quipuswap:{" "}
+                  UnStaked DeMN LP / Quipuswap{" "}
+                  </h2>
+                  <h3>
                   <Crunchy_DeMN myuserAddress={userAddress} />{" "}
-                </p>
-                <br />
-                <br />
+                  </h3>
                 <h2>Total Staked PixelDeMNs</h2>
-                <p>{totalDeMNTokensEarned}</p>
-                <br />
+                <h3>{totalDeMNTokensEarned}</h3>
                 <h2>Total DeMN Tokens Earned</h2>
-                <p>{totalDeMNTokensEarned}</p>
-                <br />
+                <h3>{totalDeMNTokensEarned}</h3>
                 <h2>DeMN Tokens Earned This week</h2>
                 <h3>(Coming Soon)</h3>
-                <br />
                 <h2>Current DeMN Token Multiplier</h2>
                 <h3>X 0.00 (Coming Soon)</h3>
-                <br />
                 <h2>PixelDeMNs Stats</h2>
-                <h3>- 50 unique owners -</h3>
-                <h3>- 178 Unique PixelDeMNs so far -</h3>
+                <h3>- 54 unique owners -</h3>
+                <h3>- 184 Unique PixelDeMNs so far -</h3>
                 <h3>- PixelDeMNs earn 21 DeMN Tokens per\wk -</h3>
-                <br />
               </div>
             ) : (
               <div>
@@ -196,7 +231,7 @@ const App: React.FC = () => {
                   height="200"
                   alt="Default PixelDeMN Image Placetaker"
                 />
-                <div id="transfers">
+                <div id="infotab">
                   <h3 className="text-align-center">Burn some DeMNs</h3>
                   <p>Receive a DeMN Horde NFT for 666 DeMN Tokens</p>
                   <p>333 of you DeMN Tokens will be Burned</p>

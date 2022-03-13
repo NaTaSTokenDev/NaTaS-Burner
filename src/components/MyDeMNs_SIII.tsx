@@ -1,15 +1,20 @@
 import React, { Dispatch, SetStateAction } from "react";
 import useFetch from "react-fetch-hook";
-import { IPost } from "../types/IPost";
+
+interface IPost {
+  data: string;
+}
 
 interface IDemnBalanceProps {
   myuserAddress: string;
+  pixeldemncontract: string;
 }
 
-const MyDeMNs_SI = ({
+function MyDeMNs_SIII({
   myuserAddress,
-}: IDemnBalanceProps) => {
-  var url = `https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri`;
+  pixeldemncontract,
+}: IDemnBalanceProps) {
+  var url = `https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${myuserAddress}&select=token.metadata.image`;
   let i = 0;
   let bob = "";
   var ipfsimage = "";
@@ -20,14 +25,16 @@ const MyDeMNs_SI = ({
     var ipfslink = JSON.stringify(data[i]);
     var ipfslink2 = ipfslink.toString();
     var ipfslink2 = ipfslink2.substring(7);
-    var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2} width="150" height="150"/>`;
+    var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2}" width="150" height="150">`;
+
     bob = ipfsimage + " " + bob;
   }
+
   return (
     <div>
       <div dangerouslySetInnerHTML={{ __html: bob }} />
     </div>
   );
-};
+}
 
-export default MyDeMNs_SI;
+export default MyDeMNs_SIII;

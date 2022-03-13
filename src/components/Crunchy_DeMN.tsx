@@ -13,7 +13,6 @@ interface DemnBalanceProps {
 const Crunchy_DeMN = ({ myuserAddress }: DemnBalanceProps) => {
   const url = `https://staging.api.tzkt.io/v1/bigmaps/14780/keys?active=true&key=${myuserAddress}&select=value`;
   const thisuser = myuserAddress;
-  const [demnuseraddress, setdemnUseraddress] = useState<string>("");
   const { data, error } = useFetch<Post[]>(url);
   if (error) return <p>There is an error.</p>;
   if (!data) return <span>Loading...</span>;

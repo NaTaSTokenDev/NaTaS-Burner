@@ -8,15 +8,11 @@ interface IPost {
 interface IDemnBalanceProps {
   myuserAddress: string;
   pixeldemncontract: string;
-  mydemnsowned: number;
-  setmyDemnsowned: Dispatch<SetStateAction<number>>;
 }
 
 function MyDeMNs_SIV({
   myuserAddress,
   pixeldemncontract,
-  mydemnsowned,
-  setmyDemnsowned,
 }: IDemnBalanceProps) {
   var url = `https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri`;
   let i = 0;
