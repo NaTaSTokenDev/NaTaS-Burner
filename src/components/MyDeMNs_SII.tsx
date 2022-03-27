@@ -16,10 +16,15 @@ function MyDeMNs_SII({
 }: IDemnBalanceProps) {
   var url = `https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${myuserAddress}&select=token.metadata.image`;
   let i = 0;
-  let bob = "";
+  let bob = `<img
+  src="/images/mask.jpg"
+  width="150"
+  height="150"
+  alt="Default PixelDeMN Image Placetaker"
+/>`;
   var ipfsimage = "";
   const { data, error } = useFetch<IPost[]>(url);
-  if (error) return <p>Network connection?</p>;
+  if (error) return <span>Network connection?</span>;
   if (!data) return <span>Loading...</span>;
   for (i = 0; i < data.length; i++) {
     var ipfslink = JSON.stringify(data[i]);
@@ -29,8 +34,13 @@ function MyDeMNs_SII({
 
     bob = ipfsimage + " " + bob;
   }
-
+if (!data) {
   return (
+    <div>
+      <div dangerouslySetInnerHTML={{ __html: bob }} />
+    </div>
+  );}
+  return  (
     <div>
       <div dangerouslySetInnerHTML={{ __html: bob }} />
     </div>

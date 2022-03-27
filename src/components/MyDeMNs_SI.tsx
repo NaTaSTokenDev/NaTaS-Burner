@@ -23,11 +23,16 @@ const MyDeMNs_SI = ({
     var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2} width="150" height="150"/>`;
     bob = ipfsimage + " " + bob;
   }
-  return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: bob }} />
-    </div>
-  );
-};
-
+  if (!data) {
+    return (
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: bob }} />
+      </div>
+    );}
+    return  (
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: bob }} />
+      </div>
+    );
+  }
 export default MyDeMNs_SI;

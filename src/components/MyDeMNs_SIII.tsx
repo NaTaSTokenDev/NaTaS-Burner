@@ -29,12 +29,17 @@ function MyDeMNs_SIII({
 
     bob = ipfsimage + " " + bob;
   }
-
-  return (
-    <div>
-      <div dangerouslySetInnerHTML={{ __html: bob }} />
-    </div>
-  );
-}
+  if (!data) {
+    return (
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: bob }} />
+      </div>
+    );}
+    return  (
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: bob }} />
+      </div>
+    );
+  }
 
 export default MyDeMNs_SIII;

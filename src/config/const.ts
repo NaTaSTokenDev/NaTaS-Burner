@@ -6,8 +6,8 @@ export const SERIES_CONTRACT_ADDRESSES = [
 ]
 
 export const SERIES_API_LINK = [
-    'https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri',
-    'https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${myuserAddress}&select=token.metadata.image',
-    'https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${myuserAddress}&select=token.metadata.image',
-    'https://staging.api.tzkt.io/v1/tokens/balances?account=${myuserAddress}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri',
+    'https://staging.api.tzkt.io/v1/tokens/balances?account=${address}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri',
+    'https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${address}&select=token.metadata.image',
+    'https://staging.api.tzkt.io/v1/tokens/balances?active=true&token.contract=${pixeldemncontract}&account=${address}&select=token.metadata.image',
+    'https://staging.api.tzkt.io/v1/tokens/balances?account=${address}&balance=1&token.metadata.symbol=OBJKT&token.metadata.tags.[*]=PixelDeMNs&select=token.metadata.artifactUri',
 ]

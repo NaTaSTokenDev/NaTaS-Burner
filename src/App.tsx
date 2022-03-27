@@ -12,7 +12,7 @@ import SendDeMN from "./components/SendDeMN";
 import { SERIES_API_LINK } from "./config/const";
 import { getDemnBalance, getNatasBalance } from "./services/balance";
 import { getPixelDeMN_SI, getPixelDeMN_SII } from "./services/pixeldemnapi";
-import { getContracts } from "./services/contract";
+import { getPixeldemncount } from "./services/contract";
 import MyDeMNs_SII from "./components/MyDeMNs_SII";
 import MyDeMNs_SIII from "./components/MyDeMNs_SIII";
 import MyDeMNs_SIV from "./components/MyDeMNs_SIV";
@@ -50,8 +50,12 @@ const App: React.FC = () => {
     return { __html: qr.createImgTag(4) };
   };
 
-  useEffect(() => {
-    getContracts(SERIES_API_LINK).then((values) => {
+
+  useEffect(() => {if (!userAddress) {
+    return;
+  }
+    getPixeldemncount(SERIES_API_LINK).then((values) => {
+      console.log('test')
       const _deMNTokensEarnedBySeries = values.map((value) => value.length);
       const _totalTokensEarnedBySeries = _deMNTokensEarnedBySeries.reduce(
         (total, earnedInSeries) => (total += earnedInSeries),
@@ -60,12 +64,30 @@ const App: React.FC = () => {
       setDeMNTokensEarnedBySeries(_deMNTokensEarnedBySeries);
       setTotalDeMNTokensEarned(_totalTokensEarnedBySeries);
     });
-  }, []);
+  }, [userAddress]);
+
+
+
+{/*
+  useEffect(() => {
+    getContracts(SERIES_API_LINK).then((values) => {
+      const _deMNTokensEarnedBySeries = values.map((value) => value.length);
+      console.log(values.length)
+      console.log(values)
+      const _totalTokensEarnedBySeries = _deMNTokensEarnedBySeries.reduce(
+        (total, earnedInSeries) => (total += earnedInSeries),
+        0
+      );
+      setDeMNTokensEarnedBySeries(_deMNTokensEarnedBySeries);
+      setTotalDeMNTokensEarned(_totalTokensEarnedBySeries);
+    });
+  }, []);  */}
 
   useEffect(() => {
     if (!userAddress) {
       return;
     }
+    console.log ('test2')
     getNatasBalance(userAddress).then((balance) => setNatasBalance(balance));
     getDemnBalance(userAddress).then((balance) => setDemnBalance(balance));
   }, [userAddress]);
@@ -156,13 +178,14 @@ const App: React.FC = () => {
             {activeTab === "infotab" ? (
               <div>
               <div>
-                <br />
+                <p>PixelDeMNs are unique 1/1 NFTs that spawn weekly DeMN Token Drops.
+                DeMN Tokens are a Tezos Token with a fixed supply of 1,000,000
+                Your DeMN Tokens can be staked at <a href="https://matterdefi.xyz/#/?live=11"> Crunchy.Network </a> or <a href="https://app.crunchy.network/#/farms?f=garden&q=DeMN"> MatterDeFi.xyz </a> to earn even more rewards</p>
                 <h2>Your Series I PixelDeMNs</h2>
                 <div>
                 <MyDeMNs_SI
                   myuserAddress={userAddress}
                 />
-                <br />
                 </div>
                 <h2>Your Series II PixelDeMNs</h2>
                 <div>
@@ -170,7 +193,6 @@ const App: React.FC = () => {
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
                  />
-                  <br />
                 </div>
                 <h2>Your Series III PixelDeMNs</h2>
                 <MyDeMNs_SIII
@@ -208,8 +230,9 @@ const App: React.FC = () => {
                   </h3>
                 <h2>Total Staked PixelDeMNs</h2>
                 <h3>{totalDeMNTokensEarned}</h3>
+                <h3>{deMNTokensEarnedBySeries}</h3>
                 <h2>Total DeMN Tokens Earned</h2>
-                <h3>{totalDeMNTokensEarned}</h3>
+                <h3>(Coming Soon)</h3>
                 <h2>DeMN Tokens Earned This week</h2>
                 <h3>(Coming Soon)</h3>
                 <h2>Current DeMN Token Multiplier</h2>
@@ -222,13 +245,11 @@ const App: React.FC = () => {
             ) : (
               <div>
                 <h2>Exclusive NFTs</h2>
-                <br />
                 <h2>Buy with DeMN Tokens</h2>
-                <br />
                 <img
                   src="/images/mask.jpg"
-                  width="200"
-                  height="200"
+                  width="150"
+                  height="150"
                   alt="Default PixelDeMN Image Placetaker"
                 />
                 <div id="infotab">
@@ -236,7 +257,7 @@ const App: React.FC = () => {
                   <p>Receive a DeMN Horde NFT for 666 DeMN Tokens</p>
                   <p>333 of you DeMN Tokens will be Burned</p>
                   <p>Only PixelDeMN NFTs earn DeMN Token Drops</p>
-                  <p>Series V PixelDeMNs will be avalible here first!</p>
+                  <p>Series VI PixelDeMNs will be avalible here first!</p>
                   <SendDeMN
                     Tezos={Tezos}
                     setUserBalance={setUserBalance}
@@ -255,7 +276,6 @@ const App: React.FC = () => {
               setBeaconConnection={setBeaconConnection}
             />
             <p>{userAddress}</p>
-            <br />
             <a
               href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections"
               target="_blank"
@@ -279,17 +299,13 @@ const App: React.FC = () => {
           <div id="content">
             <p className="text-align-center">
               Earn DeMN Tokens with your PixelDeMNS
-              <br />
               If you have not done so already, go to the&nbsp;
               <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections">
                 {" "}
                 PixelDeMN Objkt page{" "}
               </a>
-              <br />
               to get a PixelDeMN and Start Earning
-              <br />
               Thanks
-              <br />
               Beta Test - Not Public
             </p>
           </div>
@@ -305,8 +321,6 @@ const App: React.FC = () => {
             setBeaconConnection={setBeaconConnection}
             wallet={wallet}
           />
-          <br />
-          <br />
           <a
             href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections"
             target="_blank"
