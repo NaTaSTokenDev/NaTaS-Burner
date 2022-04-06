@@ -1,7 +1,7 @@
 import { TezosToolkit } from "@taquito/taquito";
 import React, { Dispatch, SetStateAction, useState } from "react";
 
-const SendNFT = ({
+const SendNFT = async ({
   Tezos,
   setUserBalance,
   userAddress,
@@ -9,13 +9,28 @@ const SendNFT = ({
   Tezos: TezosToolkit;
   setUserBalance: Dispatch<SetStateAction<number>>;
   userAddress: string;
-}): JSX.Element => {
+}): Promise<JSX.Element> => {
   const [recipient, setRecipient] = useState<string>(
     "tz1XQZVcQbSA56cf5ZKGGeM9jH4qzfwYL8rk"
   );
   const [amount, setAmount] = useState<string>("1");
   const [loading, setLoading] = useState<boolean>(false);
   //const wallet = new BeaconWallet({ name: "Beacon Docs" });
+
+  const transfer_params = [
+    {
+        from_: "tz1XQZVcQbSA56cf5ZKGGeM9jH4qzfwYL8rk",
+        txs: [
+                {
+                    to_: "tz1Pk7dgfsqsFnHyGzfkdyuADaYU4atYEd7C",
+                    token_id: 293424,
+                    amount: 1
+                },
+        ]
+    }
+]
+
+
 
   const sendTransfer = async (): Promise<void> => {
     if (recipient && amount) {
@@ -54,6 +69,13 @@ const SendNFT = ({
       // return result.opHash;
 
       setLoading(true);
+      try {
+      const contract = await Tezos.wallet.at('KT1RJ6PbjHpwc3M5rw5s2Nbmefwbuwbdxton');
+        const op = await contract.methods.transfer(transfer_params).send();
+        await op.confirmation();
+      } finally {
+        setLoading(false);
+      }
       //    try {
       //      const op = await Tezos.wallet
       //        .transfer({ to: recipient, amount: parseInt(amount) })

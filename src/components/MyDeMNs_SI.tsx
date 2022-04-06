@@ -23,16 +23,22 @@ const MyDeMNs_SI = ({
     var ipfsimage = `<img src = "https://ipfs.io/ipfs/${ipfslink2} width="150" height="150"/>`;
     bob = ipfsimage + " " + bob;
   }
-  if (!data) {
-    return (
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: bob }} />
-      </div>
-    );}
-    return  (
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: bob }} />
-      </div>
-    );
-  }
+if (bob != "") {
+  return (
+    <div>
+      <div dangerouslySetInnerHTML={{ __html: bob }} />
+    </div>
+  );}
+  else {
+  return  (
+    <div>
+      <div dangerouslySetInnerHTML={{ __html: `<img
+  src="/images/NoDeMNsSI.png"
+  width="150"
+  height="150"
+  alt="Default PixelDeMN Image Placetaker"
+/>` }} />
+    </div>
+  );}
+}
 export default MyDeMNs_SI;

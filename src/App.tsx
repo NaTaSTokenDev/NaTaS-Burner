@@ -1,4 +1,5 @@
 import { TezosToolkit } from "@taquito/taquito";
+// import { TezBridgeSigner } from '@taquito/tezbridge-signer'
 import qrcode from "qrcode-generator";
 import React, { useEffect, useState } from "react";
 import "./App.css";
@@ -9,15 +10,17 @@ import DisconnectButton from "./components/DisconnectWallet";
 import MyNewBalance from "./components/MyNewBalance";
 import MyNewDeMNs from "./components/MyNewDeMNs";
 import SendDeMN from "./components/SendDeMN";
-import { SERIES_API_LINK } from "./config/const";
+// import { SERIES_API_LINK } from "./config/const";
 import { getDemnBalance, getNatasBalance } from "./services/balance";
-import { getPixelDeMN_SI, getPixelDeMN_SII } from "./services/pixeldemnapi";
-import { getPixeldemncount } from "./services/contract";
+// import { getPixelDeMN_SI, getPixelDeMN_SII } from "./services/pixeldemnapi";
+// import { getPixeldemncount } from "./services/contract";
 import MyDeMNs_SII from "./components/MyDeMNs_SII";
 import MyDeMNs_SIII from "./components/MyDeMNs_SIII";
 import MyDeMNs_SIV from "./components/MyDeMNs_SIV";
 import MyDeMNs_SI from "./components/MyDeMNs_SI";
-import MyDeMNs from "./components/MyDeMNs";
+// import MyDeMNs from "./components/MyDeMNs";
+import DeMNDropTotal from "./components/DeMNDropTotal";
+import DeMNDropWeek from "./components/DeMNDropWeek";
 
 const App: React.FC = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
@@ -50,22 +53,22 @@ const App: React.FC = () => {
     return { __html: qr.createImgTag(4) };
   };
 
-
-  useEffect(() => {if (!userAddress) {
-    return;
-  }
-    getPixeldemncount(SERIES_API_LINK).then((values) => {
-      console.log('test')
-      const _deMNTokensEarnedBySeries = values.map((value) => value.length);
-      const _totalTokensEarnedBySeries = _deMNTokensEarnedBySeries.reduce(
-        (total, earnedInSeries) => (total += earnedInSeries),
-        0
-      );
-      setDeMNTokensEarnedBySeries(_deMNTokensEarnedBySeries);
-      setTotalDeMNTokensEarned(_totalTokensEarnedBySeries);
-    });
-  }, [userAddress]);
-
+{/*
+ // useEffect(() => {if (!userAddress) {
+ //   return;
+ // }
+ //   getPixeldemncount(SERIES_API_LINK).then((values) => {
+ //     console.log('test')
+ //     const _deMNTokensEarnedBySeries = values.map((value) => value.length);
+ //     const _totalTokensEarnedBySeries = _deMNTokensEarnedBySeries.reduce(
+ //       (total, earnedInSeries) => (total += earnedInSeries),
+ //       0
+ //     );
+ //     setDeMNTokensEarnedBySeries(_deMNTokensEarnedBySeries);
+ //     setTotalDeMNTokensEarned(_totalTokensEarnedBySeries);
+ //   });
+ // }, [userAddress]);
+*/}
 
 
 {/*
@@ -87,18 +90,17 @@ const App: React.FC = () => {
     if (!userAddress) {
       return;
     }
-    console.log ('test2')
     getNatasBalance(userAddress).then((balance) => setNatasBalance(balance));
     getDemnBalance(userAddress).then((balance) => setDemnBalance(balance));
   }, [userAddress]);
 
-  useEffect(() => {
-    if (!userAddress) {
-      return;
-    }
-    getPixelDeMN_SI(userAddress).then((pixeldemnbalance) => setPixelDeMN_SI(pixeldemnbalance));
-    getPixelDeMN_SII(userAddress).then((pixeldemnbalance) => setPixelDeMN_SII(pixeldemnbalance));
-  }, [userAddress]);
+  // useEffect(() => {
+  //  if (!userAddress) {
+  //    return;
+  //  }
+  //  getPixelDeMN_SI(userAddress).then((pixeldemnbalance) => setPixelDeMN_SI(pixeldemnbalance));
+  //  getPixelDeMN_SII(userAddress).then((pixeldemnbalance) => setPixelDeMN_SII(pixeldemnbalance));
+  // }, [userAddress]);
 
   if (publicToken && (!userAddress || isNaN(userBalance))) {
     return (
@@ -179,8 +181,9 @@ const App: React.FC = () => {
               <div>
               <div>
                 <p>PixelDeMNs are unique 1/1 NFTs that spawn weekly DeMN Token Drops.
-                DeMN Tokens are a Tezos Token with a fixed supply of 1,000,000
-                Your DeMN Tokens can be staked at <a href="https://matterdefi.xyz/#/?live=11"> Crunchy.Network </a> or <a href="https://app.crunchy.network/#/farms?f=garden&q=DeMN"> MatterDeFi.xyz </a> to earn even more rewards</p>
+                DeMN Tokens are a Tezos Token with a fixed supply of 1,000,000.
+                Your DeMN Tokens can be staked at <a href="https://matterdefi.xyz/#/?live=11"> Crunchy.Network </a> or <a href="https://app.crunchy.network/#/farms?f=garden&q=DeMN"> MatterDeFi.xyz </a> to earn even more rewards. 
+                Purchase a PixelDeMN NFT at <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections"> Objkt.com </a></p>
                 <h2>Your Series I PixelDeMNs</h2>
                 <div>
                 <MyDeMNs_SI
@@ -199,7 +202,11 @@ const App: React.FC = () => {
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
                    />
-            
+                        <h2>Your Series IV PixelDeMNs</h2>
+                     <MyDeMNs_SIV
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                   />
  </div>
                 {/* Earn tokens by series */}
                 {deMNTokensEarnedBySeries.map((tokensEarned, index) => (
@@ -228,13 +235,16 @@ const App: React.FC = () => {
                   <h3>
                   <Crunchy_DeMN myuserAddress={userAddress} />{" "}
                   </h3>
-                <h2>Total Staked PixelDeMNs</h2>
-                <h3>{totalDeMNTokensEarned}</h3>
-                <h3>{deMNTokensEarnedBySeries}</h3>
                 <h2>Total DeMN Tokens Earned</h2>
-                <h3>(Coming Soon)</h3>
+                <h3> <DeMNDropTotal
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                   /></h3>
                 <h2>DeMN Tokens Earned This week</h2>
-                <h3>(Coming Soon)</h3>
+                <h3> <DeMNDropWeek
+                  myuserAddress={userAddress}
+                  pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
+                   /></h3>
                 <h2>Current DeMN Token Multiplier</h2>
                 <h3>X 0.00 (Coming Soon)</h3>
                 <h2>PixelDeMNs Stats</h2>
@@ -244,17 +254,16 @@ const App: React.FC = () => {
               </div>
             ) : (
               <div>
-                <h2>Exclusive NFTs</h2>
                 <h2>Buy with DeMN Tokens</h2>
                 <img
-                  src="/images/mask.jpg"
+                  src="/images/DeMNHorde1.jpg"
                   width="150"
                   height="150"
                   alt="Default PixelDeMN Image Placetaker"
                 />
                 <div id="infotab">
                   <h3 className="text-align-center">Burn some DeMNs</h3>
-                  <p>Receive a DeMN Horde NFT for 666 DeMN Tokens</p>
+                  <p>Receive this DeMN Horde NFT for 666 DeMN Tokens</p>
                   <p>333 of you DeMN Tokens will be Burned</p>
                   <p>Only PixelDeMN NFTs earn DeMN Token Drops</p>
                   <p>Series VI PixelDeMNs will be avalible here first!</p>
@@ -328,7 +337,6 @@ const App: React.FC = () => {
             <img src="/images/pixeldemnsonobjkt.png" height="150" />
           </a>
         </div>
-
         <div id="footer"></div>
       </div>
     );

@@ -42,9 +42,9 @@ const SendDeMN = ({
           },
         ])
         .send();
-     //   await result;
-    //  } catch (error) {
-    //    console.log(error);
+        await result;
+      } catch (error) {
+        console.log(error);
       } finally {
         setLoading(false);
       }
