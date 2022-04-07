@@ -184,25 +184,27 @@ const App: React.FC = () => {
                 DeMN Tokens are a Tezos Token with a fixed supply of 1,000,000.
                 Your DeMN Tokens can be staked at <a href="https://matterdefi.xyz/#/?live=11"> Crunchy.Network </a> or <a href="https://app.crunchy.network/#/farms?f=garden&q=DeMN"> MatterDeFi.xyz </a> to earn even more rewards. 
                 Purchase a PixelDeMN NFT at <a href="https://objkt.com/profile/tz1SrztDp8MVcbom6T8FMPSRFns4PGFoFqxx/collections"> Objkt.com </a></p>
-                <h2>Your Series I PixelDeMNs</h2>
+                <h2>Your PixelDeMNs</h2>
+                <h2>Series I</h2>
                 <div>
                 <MyDeMNs_SI
                   myuserAddress={userAddress}
                 />
                 </div>
-                <h2>Your Series II PixelDeMNs</h2>
+              
+                <h2>Series II</h2>
                 <div>
                 <MyDeMNs_SII
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1QctVjmHzMTBBmHLwoYToaodEx7n1BXG1b'
                  />
                 </div>
-                <h2>Your Series III PixelDeMNs</h2>
+                <h2>Series III</h2>
                 <MyDeMNs_SIII
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
                    />
-                        <h2>Your Series IV PixelDeMNs</h2>
+                        <h2>Series IV</h2>
                      <MyDeMNs_SIV
                   myuserAddress={userAddress}
                   pixeldemncontract='KT1AgMH7AjVGb8G27xjSih4C7pWQSdZ8brSN'
